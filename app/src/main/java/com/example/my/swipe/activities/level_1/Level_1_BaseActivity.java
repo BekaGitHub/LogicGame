@@ -1,10 +1,7 @@
-package com.example.my.swipe.activities;
+package com.example.my.swipe.activities.level_1;
 
-import android.content.Context;
 import android.graphics.Color;
-import android.os.Handler;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -13,34 +10,26 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.TextView;
 
 import com.example.my.swipe.R;
-import com.example.my.swipe.utils.Util;
-import com.example.my.swipe.fragments.Dialog;
-import com.example.my.swipe.model.ExerciseTimer;
+import com.example.my.swipe.activities.BaseActivity;
 import com.example.my.swipe.style.MyBounceInterpolator;
 import com.example.my.swipe.style.SquareButton;
 import java.util.ArrayList;
 import java.util.Random;
 
-public abstract class Level_1_BaseActivity extends AppCompatActivity
+public abstract class Level_1_BaseActivity extends BaseActivity
         implements View.OnClickListener{
 
     protected TableRow tableRow;
     protected TableLayout tableLayout;
     protected ArrayList<Button> buttons;
+
     protected int targetPosition;
     protected static String targetSymbol;
     protected static String otherSymbol;
-
-    protected TextView timerTextView;
-    protected ImageView failedImageView;
-
-    protected ExerciseTimer exerciseTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,39 +56,20 @@ public abstract class Level_1_BaseActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
-//        super.onBackPressed();
-        Dialog dialog = new Dialog();
-        dialog.show(getFragmentManager(), "DialogTag");
-    }
-
     protected void failed(Button clickedButton)
     {
-        final Context context = this;
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
         // Use bounce interpolator with amplitude 0.2 and frequency 20
         MyBounceInterpolator interpolator = new MyBounceInterpolator(0.4, 50);
         myAnim.setInterpolator(interpolator);
 
-        if (buttons != null)
+        for (Button button : buttons)
         {
-            for (Button button : buttons) {
-                button.startAnimation(myAnim);
-            }
-            buttons.get(targetPosition).setTextColor(Color.GREEN);
+            button.startAnimation(myAnim);
         }
+        buttons.get(targetPosition).setTextColor(Color.GREEN);
 
-        clickedButton.setTextColor(Color.RED);
-        exerciseTimer.cancel();
-        Util.showFailureAnimation(context, failedImageView, R.mipmap.failure);
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                failedImageView.setVisibility(View.INVISIBLE);
-                Util.showDialogFailure(context);
-            }
-        }, 1500);
+        super.failed(clickedButton);
     }
 
     protected void createTable(int buttonNumber, int columnNumer)

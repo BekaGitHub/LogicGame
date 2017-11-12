@@ -1,4 +1,4 @@
-package com.example.my.swipe.model;
+package com.example.my.swipe.utils;
 
 import android.content.Context;
 import android.os.CountDownTimer;
@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.my.swipe.R;
+import com.example.my.swipe.model.Preferences;
 import com.example.my.swipe.utils.Util;
 
 import java.util.concurrent.TimeUnit;

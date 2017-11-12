@@ -9,8 +9,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.example.my.swipe.R;
-import com.example.my.swipe.activities.Level_1_BaseActivity;
-import com.example.my.swipe.model.ExerciseTimer;
+import com.example.my.swipe.utils.ExerciseTimer;
 import com.example.my.swipe.model.Preferences;
 
 import java.util.ArrayList;

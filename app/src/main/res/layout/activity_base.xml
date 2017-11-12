@@ -8,6 +8,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.my.swipe.activities.Level_1_BaseActivity">
+    tools:context="com.example.my.swipe.activities.level_1.Level_1_BaseActivity">
 
 </RelativeLayout>

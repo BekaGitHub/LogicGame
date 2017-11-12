@@ -12,6 +12,7 @@ import android.widget.Button;
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.MainActivity;
 import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
+import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
 import com.example.my.swipe.model.Preferences;
 import com.example.my.swipe.utils.Level;
 
@@ -21,8 +22,21 @@ import com.example.my.swipe.utils.Level;
 
 public class DialogFailure extends DialogFragment {
 
+    private int levelNumber = -1;
+    private String symbol = "";
+    private int etage = -1;
+    private Level level;
+
     public DialogFailure() {
 
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
     }
 
     @Override
@@ -34,7 +48,7 @@ public class DialogFailure extends DialogFragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View dialogView = View.inflate(getActivity(), R.layout.dialog_failure_layout, container);
 
@@ -44,7 +58,16 @@ public class DialogFailure extends DialogFragment {
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), switchLevel(Level.EINS));
+                Intent intent = new Intent(getActivity(), switchLevel(level));
+
+                if (levelNumber != -1)
+                    intent.putExtra(Preferences.LEVEL, levelNumber);
+                if (!symbol.equals(""))
+                    intent.putExtra(Preferences.SYMBOL, symbol);
+                if (etage != -1)
+                    intent.putExtra(Preferences.ETAGE, etage);
+
+                intent.putExtra(Preferences.EXERCISE, 1);
                 startActivity(intent);
             }
         });
@@ -65,7 +88,13 @@ public class DialogFailure extends DialogFragment {
         switch (level)
         {
             case EINS:
+                levelNumber = 1;
+                symbol = "+";
                 return InfoActivity_Level_1.class;
+            case ZWEI:
+                levelNumber = 2;
+                etage = R.string.second;
+                return InfoActivity_Level_2.class;
         }
 
         return null;

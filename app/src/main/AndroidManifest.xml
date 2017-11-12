@@ -19,7 +19,7 @@
         <activity android:name=".TestActivity" />
         <activity android:name=".activities.level_1.Level_1a_Activity" />
         <activity android:name=".activities.level_1.Level_1b_Activity" />
-        <activity android:name=".activities.Level_1_BaseActivity" />
+        <activity android:name=".activities.level_1.Level_1_BaseActivity" />
         <activity android:name=".activities.level_1.InfoActivity_Level_1" />
         <activity android:name=".activities.level_1.Level_1c_Activity" />
         <activity android:name=".activities.level_1.Level_1d_Activity" />

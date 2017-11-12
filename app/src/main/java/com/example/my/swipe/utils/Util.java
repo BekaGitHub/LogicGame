@@ -7,6 +7,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.example.my.swipe.R;
+import com.example.my.swipe.activities.level_1.Level_1_BaseActivity;
+import com.example.my.swipe.activities.level_2.Level_2_BaseActivity;
 import com.example.my.swipe.fragments.DialogFailure;
 
 /**
@@ -35,6 +37,12 @@ public class Util
         DialogFailure dialogFailure = new DialogFailure();
         dialogFailure.setCancelable(false);
         Activity activity = (Activity) context;
+
+        if (activity instanceof Level_1_BaseActivity)
+            dialogFailure.setLevel(Level.EINS);
+        else if (activity instanceof Level_2_BaseActivity)
+            dialogFailure.setLevel(Level.ZWEI);
+
         dialogFailure.show(activity.getFragmentManager(), "TAG");
     }
 

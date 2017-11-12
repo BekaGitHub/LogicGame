@@ -1,6 +1,5 @@
 package com.example.my.swipe.fragments;
 
-import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,9 +17,9 @@ import com.example.my.swipe.model.Preferences;
  * Created by EmpaT on 03.11.2017.
  */
 
-public class Dialog extends DialogFragment {
+public class DialogBack extends DialogFragment {
 
-    public Dialog() {
+    public DialogBack() {
 
     }
 
@@ -38,21 +37,12 @@ public class Dialog extends DialogFragment {
         View dialogView = View.inflate(getActivity(), R.layout.dialog_layout, container);
 
         Button play = (Button) dialogView.findViewById(R.id.play);
-        Button restart = (Button) dialogView.findViewById(R.id.restart);
         Button main = (Button) dialogView.findViewById(R.id.main_menu);
 
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();
-            }
-        });
-
-        restart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), getActivity().getClass());
-                startActivity(intent);
             }
         });
 

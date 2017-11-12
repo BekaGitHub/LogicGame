@@ -18,17 +18,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/restart"
-        android:layout_below="@+id/play"
-        android:text="@string/restart_game"
-        android:textSize="@dimen/mind_counter_dimen"
-        android:gravity="center"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/main_menu"
-        android:layout_below="@+id/restart"
+        android:layout_below="@+id/play"
         android:text="@string/main"
         android:textSize="@dimen/mind_counter_dimen"
         android:gravity="center"/>

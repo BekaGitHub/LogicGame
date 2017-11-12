@@ -10,17 +10,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.my.swipe.activities.Level_1_BaseActivity;
-import com.example.my.swipe.model.ExerciseTimer;
+import com.example.my.swipe.utils.ExerciseTimer;
 import com.example.my.swipe.model.Preferences;
 
-public class Level_2b_Activity extends Level_1_BaseActivity {
-
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-    TextView exerciseTextView;
+public class Level_2b_Activity extends Level_2_BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
