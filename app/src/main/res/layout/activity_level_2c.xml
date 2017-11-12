@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_level_2a"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_color"
+    tools:context="com.example.my.swipe.activities.level_2.Level_2c_Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timer_text_view_2c"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/text_color"
+        android:textSize="25sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/exercise_2c"
+        android:layout_below="@+id/timer_text_view_2c"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:textSize="@dimen/level_counter"
+        android:textColor="@color/text_color"
+        android:gravity="center"
+        />
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:id="@+id/haus_2c"
+        android:layout_below="@+id/exercise_2c"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/haus_3"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/failed_image_2c"
+        android:layout_centerInParent="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/haus_2c"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/button_1_level_2c"
+            android:text="@string/jurgen"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/button_2_level_2c"
+            android:text="@string/andrea"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/button_3_level_2c"
+            android:text="@string/heidi"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/button_4_level_2c"
+            android:text="@string/kurt"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

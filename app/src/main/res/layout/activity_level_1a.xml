@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_level_1_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_color"
+    tools:context="com.example.my.swipe.activities.level_1.Level_1a_Activity">
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timer_text_view_1a"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/text_color"
+        android:textSize="25sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/failed_image_1a"
+        android:layout_centerInParent="true"/>
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/table_layout_level_1a"
+        android:layout_below="@+id/timer_text_view_1a"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>

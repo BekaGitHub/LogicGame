@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_level1__explanation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_color"
+    tools:context="com.example.my.swipe.activities.level_1.InfoActivity_Level_1"
+    android:onClick="handleClick">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titel_level1"
+        android:text="@string/level_1_titel"
+        android:textSize="@dimen/level_titel"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/level_counter_level1"
+        android:text="@string/level_counter"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/level_counter"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/level_counter_vertical_margin"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/exercise_counter_level1"
+        android:layout_below="@+id/level_counter_level1"
+        android:layout_marginTop="@dimen/exercise_counter_vertical_margin"
+        android:text="@string/exercise_counter"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/exercise_counter"
+        android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/exercise_level1"
+            android:layout_below="@+id/exercise_counter_level1"
+            android:gravity="center"
+            android:text="@string/find_symbol"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/level_counter"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/start_game"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:text="@string/start_game"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/exercise_counter"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        />
+</RelativeLayout>
