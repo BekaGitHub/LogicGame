@@ -11,7 +11,8 @@ import android.widget.Button;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.MainActivity;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
+import com.example.my.swipe.utils.ExerciseTimer;
 
 /**
  * Created by EmpaT on 03.11.2017.
@@ -19,8 +20,18 @@ import com.example.my.swipe.model.Preferences;
 
 public class DialogBack extends DialogFragment {
 
+    private ExerciseTimer exerciseTimer;
+
     public DialogBack() {
 
+    }
+
+    public ExerciseTimer getExerciseTimer() {
+        return exerciseTimer;
+    }
+
+    public void setExerciseTimer(ExerciseTimer exerciseTimer) {
+        this.exerciseTimer = exerciseTimer;
     }
 
     @Override
@@ -42,6 +53,7 @@ public class DialogBack extends DialogFragment {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                exerciseTimer.resume();
                 dismiss();
             }
         });

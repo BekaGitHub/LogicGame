@@ -5,15 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.fragments.DialogBack;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
 
 public class InfoActivity_Level_1 extends AppCompatActivity {
 
     private int levelNumber;
     private int exerciseNumber;
+    int timePassedFromLastExercise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,9 @@ public class InfoActivity_Level_1 extends AppCompatActivity {
         TextView levelCounter = (TextView) findViewById(R.id.level_counter_level1);
         TextView exerciseCounter = (TextView) findViewById(R.id.exercise_counter_level1);
         TextView exercise = (TextView) findViewById(R.id.exercise_level1);
+
+        timePassedFromLastExercise = getIntent().
+                getIntExtra(Preferences.TIME_PASSED, -1);
 
         levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
         exerciseNumber = getIntent().getIntExtra(Preferences.EXERCISE, -1);
@@ -61,6 +66,8 @@ public class InfoActivity_Level_1 extends AppCompatActivity {
                 intent = new Intent(this, Level_1d_Activity.class);
                 break;
         }
+        intent.putExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE,
+                timePassedFromLastExercise);
         startActivity(intent);
     }
 

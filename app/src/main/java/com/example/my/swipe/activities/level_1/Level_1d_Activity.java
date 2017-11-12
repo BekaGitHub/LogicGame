@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.LevelDoneActivity;
 import com.example.my.swipe.utils.ExerciseTimer;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
 
 import java.util.ArrayList;
 
@@ -38,7 +38,8 @@ public class Level_1d_Activity extends Level_1_BaseActivity implements View.OnCl
 
         createTable(84, 7);
 
-        exerciseTimer = new ExerciseTimer(30000, 1000);
+        exerciseTimer = new ExerciseTimer(30000, 1000, true);
+        exerciseTimer.create();
         exerciseTimer.setTextView(timerTextView);
         exerciseTimer.setImageView(failedImageView);
         exerciseTimer.setContext(this);
@@ -55,8 +56,12 @@ public class Level_1d_Activity extends Level_1_BaseActivity implements View.OnCl
         if (clickedButton.getText().equals(Preferences.SYMBOLS[3])) {
             Intent intent = new Intent(Level_1d_Activity.this, LevelDoneActivity.class);
 //            startActivity(intent);
+            exerciseTimer.pause();
             exerciseTimer.cancel();
-            Toast.makeText(this, "" + Preferences.LEVEL_TIME_SPENT, Toast.LENGTH_SHORT).show();
+
+            int timePassedFromLastExercise = getIntent().getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, -1);
+            timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
+            Toast.makeText(this, "" + timePassed, Toast.LENGTH_SHORT).show();
         } else {
             failed(clickedButton);
         }

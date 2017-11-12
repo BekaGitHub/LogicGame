@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/mind_counter"
+            android:id="@+id/total_mind_number"
             android:text="0 von X "
             android:textSize="@dimen/mind_counter_dimen"
             android:textColor="@color/text_color"

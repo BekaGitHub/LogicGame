@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.utils.ExerciseTimer;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
 
 import java.util.ArrayList;
 
@@ -36,7 +36,8 @@ public class Level_1c_Activity extends Level_1_BaseActivity implements View.OnCl
 
         createTable(84, 7);
 
-        exerciseTimer = new ExerciseTimer(30000, 1000);
+        exerciseTimer = new ExerciseTimer(30000, 1000, true);
+        exerciseTimer.create();
         exerciseTimer.setTextView(timerTextView);
         exerciseTimer.setImageView(failedImageView);
         exerciseTimer.setContext(this);
@@ -55,7 +56,12 @@ public class Level_1c_Activity extends Level_1_BaseActivity implements View.OnCl
             intent.putExtra(Preferences.GRATULATION, true);
             intent.putExtra(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
             intent.putExtra(Preferences.SYMBOL, Preferences.SYMBOLS[3]);
+            exerciseTimer.pause();
             exerciseTimer.cancel();
+            int timePassedFromLastExercise = getIntent()
+                    .getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, -1);
+            timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
+            intent.putExtra(Preferences.TIME_PASSED, timePassed);
             startActivity(intent);
         } else {
             failed(clickedButton);

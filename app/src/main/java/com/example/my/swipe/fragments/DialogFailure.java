@@ -13,7 +13,7 @@ import com.example.my.swipe.R;
 import com.example.my.swipe.activities.MainActivity;
 import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
 import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
 import com.example.my.swipe.utils.Level;
 
 /**

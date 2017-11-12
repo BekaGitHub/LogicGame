@@ -1,6 +1,8 @@
 package com.example.my.swipe.fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,12 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
 import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
 import com.example.my.swipe.model.Image;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
 
 /**
  * Created by EmpaT on 01.11.2017.
@@ -30,7 +33,10 @@ public class ScreenSlidePageFragment extends Fragment {
 
         ImageView displayImageView = (ImageView) rootView
                 .findViewById(R.id.display_image_view);
-
+        TextView totalMindsNumberTextView = (TextView) rootView.findViewById(R.id.total_mind_number);
+        SharedPreferences prefs = getActivity().getSharedPreferences(Preferences.PREFS, Context.MODE_PRIVATE);
+        int a = prefs.getInt("name", -1);
+        totalMindsNumberTextView.setText("" + a);
         //Bundle wird aus ScreenSlidePagerActivity geliefert
         Bundle bundle = getArguments();
         int position = bundle.getInt(Preferences.POSITION);

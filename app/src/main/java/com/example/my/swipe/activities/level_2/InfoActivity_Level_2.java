@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.fragments.DialogBack;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
 
 public class InfoActivity_Level_2 extends AppCompatActivity {
 

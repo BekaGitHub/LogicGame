@@ -23,15 +23,17 @@ public class BaseActivity extends AppCompatActivity
     protected TextView timerTextView;
     protected ImageView failedImageView;
     protected ExerciseTimer exerciseTimer;
+    protected int timePassed = 0;
 
     @Override
     public void onBackPressed()
     {
         DialogBack dialog = new DialogBack();
+        dialog.setExerciseTimer(exerciseTimer);
         dialog.show(getFragmentManager(), "DialogTag");
 
         if (exerciseTimer != null)
-            exerciseTimer.cancel();
+            exerciseTimer.pause();
     }
 
     protected void failed(Button clickedButton)

@@ -1,6 +1,7 @@
 package com.example.my.swipe.activities.level_1;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.utils.ExerciseTimer;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
 
 import java.util.ArrayList;
 
@@ -37,7 +38,8 @@ public class Level_1a_Activity extends Level_1_BaseActivity{
 
         createTable(84, 7);
 
-        exerciseTimer = new ExerciseTimer(30000, 1000);
+        exerciseTimer = new ExerciseTimer(30000, 1000, true);
+        exerciseTimer.create();
         exerciseTimer.setTextView(timerTextView);
         exerciseTimer.setImageView(failedImageView);
         exerciseTimer.setContext(this);
@@ -56,11 +58,21 @@ public class Level_1a_Activity extends Level_1_BaseActivity{
             intent.putExtra(Preferences.GRATULATION, true);
             intent.putExtra(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
             intent.putExtra(Preferences.SYMBOL, Preferences.SYMBOLS[1]);
+            exerciseTimer.pause();
             exerciseTimer.cancel();
+            timePassed = (int) (exerciseTimer.timePassed()/1000);
+            intent.putExtra(Preferences.TIME_PASSED, timePassed);
             startActivity(intent);
         } else {
             failed(clickedButton);
         }
+    }
 
+    private void saveMindNumber(int number)
+    {
+        SharedPreferences.Editor editor =
+                getSharedPreferences(Preferences.PREFS, MODE_PRIVATE).edit();
+        editor.putInt("name", 4);
+        editor.apply();
     }
 }

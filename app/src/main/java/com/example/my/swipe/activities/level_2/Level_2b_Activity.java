@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.my.swipe.utils.ExerciseTimer;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
 
 public class Level_2b_Activity extends Level_2_BaseActivity {
 
@@ -53,7 +53,8 @@ public class Level_2b_Activity extends Level_2_BaseActivity {
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
 
-        exerciseTimer = new ExerciseTimer(90000, 1000);
+        exerciseTimer = new ExerciseTimer(90000, 1000, true);
+        exerciseTimer.create();
         exerciseTimer.setTextView(timerTextView);
         exerciseTimer.setImageView(failedImageView);
         exerciseTimer.setContext(this);

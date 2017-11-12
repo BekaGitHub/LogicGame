@@ -11,9 +11,8 @@ import android.os.Bundle;
 import com.example.my.swipe.R;
 import com.example.my.swipe.ZoomOutPageTransformer;
 import com.example.my.swipe.fragments.ScreenSlidePageFragment;
-import com.example.my.swipe.fragments.ScreenSlidePageFragment_1;
 import com.example.my.swipe.model.Image;
-import com.example.my.swipe.model.Preferences;
+import com.example.my.swipe.utils.Preferences;
 
 public class ScreenSlidePagerActivity extends FragmentActivity {
 
