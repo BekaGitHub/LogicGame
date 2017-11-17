@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.my.swipe.R;
+import com.example.my.swipe.utils.Preferences;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ public class LevelDoneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_level_done);
 
         imageViews = new ArrayList<>();
+        levelMindCounter = getIntent().getIntExtra(Preferences.LEVEL_POINT, 0);
 
         ImageView done_image_1 = (ImageView) findViewById(R.id.done_image_1);
         ImageView done_image_2 = (ImageView) findViewById(R.id.done_image_2);
@@ -50,7 +52,7 @@ public class LevelDoneActivity extends AppCompatActivity {
                         fadeImage(imageViews.get(fadedImageCounter));
                         fadedImageCounter++;
                         mind_number.setText("+" + fadedImageCounter);
-                        if (fadedImageCounter >= 4)
+                        if (fadedImageCounter >= levelMindCounter)
                             cancel();
                     }
                 });

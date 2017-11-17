@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.LevelDoneActivity;
+import com.example.my.swipe.utils.Evaluator;
 import com.example.my.swipe.utils.ExerciseTimer;
 import com.example.my.swipe.utils.Preferences;
 
@@ -55,13 +56,16 @@ public class Level_1d_Activity extends Level_1_BaseActivity implements View.OnCl
         Button clickedButton = (Button) view;
         if (clickedButton.getText().equals(Preferences.SYMBOLS[3])) {
             Intent intent = new Intent(Level_1d_Activity.this, LevelDoneActivity.class);
-//            startActivity(intent);
+//
             exerciseTimer.pause();
             exerciseTimer.cancel();
 
             int timePassedFromLastExercise = getIntent().getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, -1);
             timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
-            Toast.makeText(this, "" + timePassed, Toast.LENGTH_SHORT).show();
+
+            int points = Evaluator.evaluate(Preferences.LEVEL_1_TOTAL_TIME_IN_SECONDS, timePassed);
+            intent.putExtra(Preferences.LEVEL_POINT, points);
+            startActivity(intent);
         } else {
             failed(clickedButton);
         }

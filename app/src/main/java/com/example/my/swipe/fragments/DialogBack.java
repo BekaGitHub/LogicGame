@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.my.swipe.R;
-import com.example.my.swipe.activities.MainActivity;
+import com.example.my.swipe.MainActivity;
 import com.example.my.swipe.utils.Preferences;
 import com.example.my.swipe.utils.ExerciseTimer;
 

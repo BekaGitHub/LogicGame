@@ -28,4 +28,7 @@ public class Preferences {
 
     public static int LEVEL_COUNTER = 1;
     public static int EXERCISE_COUNTER = 1;
+
+    public static final String LEVEL_POINT = "levelPoint";
+    public static final int LEVEL_1_TOTAL_TIME_IN_SECONDS = 120;
 }
