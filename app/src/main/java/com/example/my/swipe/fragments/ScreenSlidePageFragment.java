@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
 import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
+import com.example.my.swipe.activities.level_3.InfoActivity_Level_3;
 import com.example.my.swipe.model.Image;
 import com.example.my.swipe.utils.Preferences;
 
@@ -60,6 +61,12 @@ public class ScreenSlidePageFragment extends Fragment {
                     case 1:
                         intent = new Intent(getActivity(), InfoActivity_Level_2.class);
                         intent.putExtra(Preferences.ETAGE, R.string.second);
+                        break;
+                    case 2:
+                        intent = new Intent(getActivity(), InfoActivity_Level_3.class);
+                        intent.putExtra(Preferences.ERSTE, R.string.first);
+                        intent.putExtra(Preferences.ZWEITE, R.string.second);
+                        break;
                 }
                 intent.putExtra(Preferences.LEVEL,
                         Preferences.LEVEL_COUNTER + fragmentPosition);

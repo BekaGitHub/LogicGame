@@ -13,6 +13,7 @@ import com.example.my.swipe.R;
 import com.example.my.swipe.MainActivity;
 import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
 import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
+import com.example.my.swipe.activities.level_3.InfoActivity_Level_3;
 import com.example.my.swipe.utils.Preferences;
 import com.example.my.swipe.utils.Level;
 
@@ -26,6 +27,8 @@ public class DialogFailure extends DialogFragment {
     private String symbol = "";
     private int etage = -1;
     private Level level;
+    private int figureNumber_1 = -1;
+    private int figureNumber_2 = -1;
 
     public DialogFailure() {
 
@@ -66,6 +69,11 @@ public class DialogFailure extends DialogFragment {
                     intent.putExtra(Preferences.SYMBOL, symbol);
                 if (etage != -1)
                     intent.putExtra(Preferences.ETAGE, etage);
+                if (figureNumber_1 != -1 && figureNumber_2 != -1)
+                {
+                    intent.putExtra(Preferences.ERSTE, figureNumber_1);
+                    intent.putExtra(Preferences.ZWEITE, figureNumber_2);
+                }
 
                 intent.putExtra(Preferences.EXERCISE, 1);
                 startActivity(intent);
@@ -95,6 +103,11 @@ public class DialogFailure extends DialogFragment {
                 levelNumber = 2;
                 etage = R.string.second;
                 return InfoActivity_Level_2.class;
+            case DREI:
+                levelNumber = 3;
+                figureNumber_1 = R.string.first;
+                figureNumber_2 = R.string.second;
+                return InfoActivity_Level_3.class;
         }
 
         return null;

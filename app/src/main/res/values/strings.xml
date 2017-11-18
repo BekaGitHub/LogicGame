@@ -6,6 +6,7 @@
     <string name="level_counter">დონე %1$s</string>
     <string name="level_1_titel">იპოვე სიმბოლო</string>
     <string name="level_2_titel">ვინ სად ცხოვრობს</string>
+    <string name="level_3_titel">რა აქვთ ფიგურებს საერთო</string>
     <string name="exercise_counter">დავალება %1$s/%2$s</string>
     <string name="find_symbol">იპოვე სიმბოლო: %1$s</string>
     <string name="start_game">თამაშის დასაწყებად დააკლიკე ეკრანს</string>
@@ -15,10 +16,12 @@
     <string name="restart_game">ახლიდან დაწყება</string>
     <string name="main">მთავარი</string>
     <string name="who_lives_where">ვინ ცხოვრობს სახლის %1$s სართულზე</string>
+    <string name="common_figures_easy">რა აქვს %1$s და %2$s ფიგურას საერთო </string>
     <string name="first">პირველ</string>
     <string name="second">მეორე</string>
     <string name="third">მესამე</string>
     <string name="fourth">მეოთხე</string>
+    <string name="fifth">მეხუთე</string>
     <string name="jurgen">ლიზი</string>
     <string name="andrea">ბექა</string>
     <string name="heidi">ზეზვა</string>
@@ -35,6 +38,10 @@
     <string name="exercise_level_2c">%1$s ცხოვრობს %2$s ქვემოთ.
         %3$s ცხოვრობს %4$s ქვემოთ.
         %5$s ცხოვრობს %6$s ზემოთ. ვინ ცხოვრობს %7$s სართულზე</string>
+
+    <string name="color">ფერი</string>
+    <string name="form">ფორმა</string>
+    <string name="nothing">არაფერი</string>
 
   <string name="wallapop">M874.323897,513.518484 C860.358769,445.332884 816.382769,412.921263
     805.267282,406.191832 C800.657846,403.400084 797.676103,399.358653 797.88841,392.435874

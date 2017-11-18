@@ -27,7 +27,10 @@
         <activity android:name=".activities.level_2.Level_2a_Activity" />
         <activity android:name=".activities.level_2.Level_2b_Activity" />
         <activity android:name=".activities.level_2.Level_2c_Activity" />
-        <activity android:name=".activities.LevelDoneActivity"></activity>
+        <activity android:name=".activities.LevelDoneActivity" />
+        <activity android:name=".activities.level_3.InfoActivity_Level_3" />
+        <activity android:name=".activities.level_3.Level_3a_Activity"/>
+        <activity android:name=".activities.level_3.Level_3b_Activity"/>
     </application>
 
 </manifest>

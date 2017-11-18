@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.level_1.Level_1_BaseActivity;
 import com.example.my.swipe.activities.level_2.Level_2_BaseActivity;
+import com.example.my.swipe.activities.level_3.Level_3_BaseActivity;
 import com.example.my.swipe.fragments.DialogFailure;
 
 /**
@@ -42,6 +43,8 @@ public class Util
             dialogFailure.setLevel(Level.EINS);
         else if (activity instanceof Level_2_BaseActivity)
             dialogFailure.setLevel(Level.ZWEI);
+        else if (activity instanceof Level_3_BaseActivity)
+            dialogFailure.setLevel(Level.DREI);
 
         dialogFailure.show(activity.getFragmentManager(), "TAG");
     }

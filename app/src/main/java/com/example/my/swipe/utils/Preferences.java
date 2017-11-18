@@ -13,6 +13,13 @@ public class Preferences {
     public static final String LEVEL = "level";
     public static final String ETAGE = "etage";
 
+    public static final String ERSTE = "erste";
+    public static final String ZWEITE = "zweite";
+    public static final String DRITTE = "dritte";
+    public static final String VIERTE = "vierte";
+    public static final String FUENFTE = "fuenfte";
+    public static final String SECHSTE = "sechste";
+
     public static final String PREFS = "preference";
     public static final String PREF_MIND_NUMBER_LEVEL_1 = "prefMindNumberLevel1";
 
@@ -28,6 +35,8 @@ public class Preferences {
 
     public static int LEVEL_COUNTER = 1;
     public static int EXERCISE_COUNTER = 1;
+
+    public static final String EXERCISE_INFO = "exerciseInfo";
 
     public static final String LEVEL_POINT = "levelPoint";
     private static final int LEVEL_1_EXERCISE_TIME_IN_SECONDS = 30;
