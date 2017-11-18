@@ -4,10 +4,10 @@
     <string name="game_name">თამაშის სახელი</string>
     <string name="hello_text">დაწერე რამე მისასალმებელი ტექსტი</string>
     <string name="level_counter">დონე %1$s</string>
+    <string name="exercise_counter">დავალება %1$s/%2$s</string>
     <string name="level_1_titel">იპოვე სიმბოლო</string>
     <string name="level_2_titel">ვინ სად ცხოვრობს</string>
     <string name="level_3_titel">რა აქვთ ფიგურებს საერთო</string>
-    <string name="exercise_counter">დავალება %1$s/%2$s</string>
     <string name="find_symbol">იპოვე სიმბოლო: %1$s</string>
     <string name="start_game">თამაშის დასაწყებად დააკლიკე ეკრანს</string>
     <string name="exercise_done">გილოცავ, შენ წარმატებით დაძლიე დავალება</string>
@@ -42,6 +42,7 @@
     <string name="color">ფერი</string>
     <string name="form">ფორმა</string>
     <string name="nothing">არაფერი</string>
+    <string name="both">ორივე</string>
 
   <string name="wallapop">M874.323897,513.518484 C860.358769,445.332884 816.382769,412.921263
     805.267282,406.191832 C800.657846,403.400084 797.676103,399.358653 797.88841,392.435874

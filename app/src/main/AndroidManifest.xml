@@ -31,6 +31,7 @@
         <activity android:name=".activities.level_3.InfoActivity_Level_3" />
         <activity android:name=".activities.level_3.Level_3a_Activity"/>
         <activity android:name=".activities.level_3.Level_3b_Activity"/>
+        <activity android:name=".activities.level_3.Level_3c_Activity"/>
     </application>
 
 </manifest>

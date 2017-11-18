@@ -7,17 +7,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.my.swipe.R;
+import com.example.my.swipe.activities.InfoBaseActivity;
 import com.example.my.swipe.activities.level_2.Level_2a_Activity;
 import com.example.my.swipe.activities.level_2.Level_2b_Activity;
 import com.example.my.swipe.activities.level_2.Level_2c_Activity;
 import com.example.my.swipe.utils.Preferences;
 
-public class InfoActivity_Level_3 extends AppCompatActivity {
-
-    private int levelNumber;
-    private int exerciseNumber;
-    private int timePassedFromLastExercise;
-    String exerciseInfo = "";
+public class InfoActivity_Level_3 extends InfoBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +27,7 @@ public class InfoActivity_Level_3 extends AppCompatActivity {
         timePassedFromLastExercise = getIntent().
                 getIntExtra(Preferences.TIME_PASSED, 0);
 
-        levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
+        int levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
         exerciseNumber = getIntent().getIntExtra(Preferences.EXERCISE, -1);
         boolean gratulation = getIntent().getBooleanExtra(Preferences.GRATULATION, false);
         int figureNumber_1 = getIntent().getIntExtra(Preferences.ERSTE, 0);
@@ -79,15 +75,15 @@ public class InfoActivity_Level_3 extends AppCompatActivity {
         switch (exerciseNumber) {
             case 1:
                 intent = new Intent(this, Level_3a_Activity.class);
-                intent.putExtra(Preferences.EXERCISE_INFO, exerciseInfo);
                 break;
             case 2:
                 intent = new Intent(this, Level_3b_Activity.class);
                 break;
             case 3:
-//                intent = new Intent(this, Level_2c_Activity.class);
+                intent = new Intent(this, Level_3c_Activity.class);
                 break;
         }
+        intent.putExtra(Preferences.EXERCISE_INFO, exerciseInfo);
         intent.putExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE,
                 timePassedFromLastExercise);
         startActivity(intent);

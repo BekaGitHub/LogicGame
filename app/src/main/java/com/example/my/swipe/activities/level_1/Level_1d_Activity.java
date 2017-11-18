@@ -35,16 +35,8 @@ public class Level_1d_Activity extends Level_1_BaseActivity implements View.OnCl
         timerTextView = (TextView) findViewById(R.id.timer_text_view_1d);
         failedImageView = (ImageView) findViewById(R.id.failed_image_1d);
 
-        buttons = new ArrayList<>();
-
         createTable(84, 7);
-
-        exerciseTimer = new ExerciseTimer(30000, 1000, true);
-        exerciseTimer.create();
-        exerciseTimer.setTextView(timerTextView);
-        exerciseTimer.setImageView(failedImageView);
-        exerciseTimer.setContext(this);
-        exerciseTimer.start();
+        startExerciseTimer(30000);
     }
 
     @Override
@@ -56,10 +48,7 @@ public class Level_1d_Activity extends Level_1_BaseActivity implements View.OnCl
         Button clickedButton = (Button) view;
         if (clickedButton.getText().equals(Preferences.SYMBOLS[3])) {
             Intent intent = new Intent(Level_1d_Activity.this, LevelDoneActivity.class);
-//
-            exerciseTimer.pause();
-            exerciseTimer.cancel();
-
+            stopExerciseTimer();
             int timePassedFromLastExercise = getIntent().getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
             timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
 

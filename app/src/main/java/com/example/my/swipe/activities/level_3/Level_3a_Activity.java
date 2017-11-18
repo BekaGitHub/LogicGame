@@ -6,10 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.my.swipe.R;
-import com.example.my.swipe.utils.ExerciseTimer;
 import com.example.my.swipe.utils.Preferences;
 
 public class Level_3a_Activity extends Level_3_BaseActivity
@@ -26,7 +24,6 @@ public class Level_3a_Activity extends Level_3_BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_3a);
 
-
         colorButton = (Button) findViewById(R.id.button_color_level_3a);
         formButton = (Button) findViewById(R.id.button_form_level_3a);
         exerciseInfoTextView = (TextView) findViewById(R.id.exercise_info_level3);
@@ -38,16 +35,7 @@ public class Level_3a_Activity extends Level_3_BaseActivity
         colorButton.setOnClickListener(this);
         formButton.setOnClickListener(this);
 
-        exerciseTimer = new ExerciseTimer(10000, 1000, true);
-        exerciseTimer.create();
-        exerciseTimer.setTextView(timerTextView);
-        exerciseTimer.setImageView(failedImageView);
-        exerciseTimer.setContext(this);
-        exerciseTimer.start();
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
+        startExerciseTimer(10000);
     }
 
     @Override
@@ -63,6 +51,9 @@ public class Level_3a_Activity extends Level_3_BaseActivity
             intent.putExtra(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
             intent.putExtra(Preferences.DRITTE, R.string.third);
             intent.putExtra(Preferences.FUENFTE, R.string.fifth);
+            stopExerciseTimer();
+            timePassed = (int) (exerciseTimer.timePassed()/1000);
+            intent.putExtra(Preferences.TIME_PASSED, timePassed);
             startActivity(intent);
         }
     }

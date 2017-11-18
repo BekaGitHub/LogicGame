@@ -27,12 +27,7 @@ public class Level_2a_Activity extends Level_2_BaseActivity {
         failedImageView = (ImageView) findViewById(R.id.failed_image_2a);
         exerciseTextView = (TextView) findViewById(R.id.exercise_2a);
 
-        String jurgen = getString(R.string.jurgen);
-        String andrea = getString(R.string.andrea);
-        String heidi = getString(R.string.heidi);
-        String kurt = getString(R.string.kurt);
         String secondEtage = getString(R.string.second);
-        String postS = getString(R.string.postS);
         String exercise = getString(R.string.exercise_level_2a,
                 kurt, andrea + postS, kurt, heidi + postS, andrea, jurgen + postS, secondEtage);
 
@@ -48,16 +43,7 @@ public class Level_2a_Activity extends Level_2_BaseActivity {
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
 
-        exerciseTimer = new ExerciseTimer(90000, 1000, true);
-        exerciseTimer.create();
-        exerciseTimer.setTextView(timerTextView);
-        exerciseTimer.setImageView(failedImageView);
-        exerciseTimer.setContext(this);
-        exerciseTimer.start();
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
+        startExerciseTimer(90000);
     }
 
     @Override
@@ -73,8 +59,7 @@ public class Level_2a_Activity extends Level_2_BaseActivity {
             intent.putExtra(Preferences.GRATULATION, true);
             intent.putExtra(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
             intent.putExtra(Preferences.ETAGE, R.string.fourth);
-            exerciseTimer.pause();
-            exerciseTimer.cancel();
+            stopExerciseTimer();
             timePassed = (int) (exerciseTimer.timePassed()/1000);
             intent.putExtra(Preferences.TIME_PASSED, timePassed);
             startActivity(intent);

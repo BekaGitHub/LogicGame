@@ -16,7 +16,6 @@ public abstract class Level_3_BaseActivity extends BaseActivity
 {
     protected Button colorButton;
     protected Button formButton;
-    protected Button nothingButton;
     protected TextView exerciseInfoTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

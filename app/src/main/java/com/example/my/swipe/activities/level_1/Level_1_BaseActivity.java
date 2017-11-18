@@ -17,6 +17,8 @@ import com.example.my.swipe.R;
 import com.example.my.swipe.activities.BaseActivity;
 import com.example.my.swipe.style.MyBounceInterpolator;
 import com.example.my.swipe.style.SquareButton;
+import com.example.my.swipe.utils.ExerciseTimer;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -34,6 +36,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        buttons = new ArrayList<>();
     }
 
     protected Button createButton(String text) {

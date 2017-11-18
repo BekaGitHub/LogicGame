@@ -41,8 +41,11 @@ public class Preferences {
     public static final String LEVEL_POINT = "levelPoint";
     private static final int LEVEL_1_EXERCISE_TIME_IN_SECONDS = 30;
     private static final int LEVEL_2_EXERCISE_TIME_IN_SECONDS = 90;
+    private static final int LEVEL_3_EXERCISE_TIME_IN_SECONDS = 10;
     public static final int LEVEL_1_TOTAL_TIME_IN_SECONDS =
             LEVEL_1_EXERCISE_TIME_IN_SECONDS * 4;
     public static final int LEVEL_2_TOTAL_TIME_IN_SECONDS =
-            LEVEL_2_EXERCISE_TIME_IN_SECONDS * 4;
+            LEVEL_2_EXERCISE_TIME_IN_SECONDS * 3;
+    public static final int LEVEL_3_TOTAL_TIME_IN_SECONDS =
+            LEVEL_3_EXERCISE_TIME_IN_SECONDS * 3;
 }

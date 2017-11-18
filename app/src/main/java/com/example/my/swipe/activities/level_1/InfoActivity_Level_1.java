@@ -8,14 +8,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.my.swipe.R;
+import com.example.my.swipe.activities.InfoBaseActivity;
 import com.example.my.swipe.fragments.DialogBack;
 import com.example.my.swipe.utils.Preferences;
 
-public class InfoActivity_Level_1 extends AppCompatActivity {
-
-    private int levelNumber;
-    private int exerciseNumber;
-    int timePassedFromLastExercise;
+public class InfoActivity_Level_1 extends InfoBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +26,14 @@ public class InfoActivity_Level_1 extends AppCompatActivity {
         timePassedFromLastExercise = getIntent().
                 getIntExtra(Preferences.TIME_PASSED, 0);
 
-        levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
+        int levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
         exerciseNumber = getIntent().getIntExtra(Preferences.EXERCISE, -1);
         String symbol = getIntent().getStringExtra(Preferences.SYMBOL);
         boolean gratulation = getIntent().getBooleanExtra(Preferences.GRATULATION, false);
 
         String infoText = "";
-        if(this.levelNumber != -1) {
-            infoText = getString(R.string.level_counter, ""+ this.levelNumber);
+        if(levelNumber != -1) {
+            infoText = getString(R.string.level_counter, ""+ levelNumber);
         }
 
         if (gratulation)
@@ -69,12 +66,5 @@ public class InfoActivity_Level_1 extends AppCompatActivity {
         intent.putExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE,
                 timePassedFromLastExercise);
         startActivity(intent);
-    }
-
-    @Override
-    public void onBackPressed()
-    {
-        DialogBack dialog = new DialogBack();
-        dialog.show(getFragmentManager(), "DialogTag");
     }
 }

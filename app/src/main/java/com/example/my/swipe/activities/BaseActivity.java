@@ -2,6 +2,7 @@ package com.example.my.swipe.activities;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -50,5 +51,25 @@ public class BaseActivity extends AppCompatActivity
                 Util.showDialogFailure(context);
             }
         }, 1500);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+    }
+
+    protected void startExerciseTimer(int milliSeconds)
+    {
+        exerciseTimer = new ExerciseTimer(milliSeconds, 1000, true);
+        exerciseTimer.create();
+        exerciseTimer.setTextView(timerTextView);
+        exerciseTimer.setImageView(failedImageView);
+        exerciseTimer.setContext(this);
+        exerciseTimer.start();
+    }
+
+    protected void stopExerciseTimer()
+    {
+        exerciseTimer.pause();
+        exerciseTimer.cancel();
     }
 }

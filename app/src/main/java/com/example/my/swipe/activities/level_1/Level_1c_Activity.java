@@ -32,21 +32,10 @@ public class Level_1c_Activity extends Level_1_BaseActivity implements View.OnCl
         timerTextView = (TextView) findViewById(R.id.timer_text_view_1c);
         failedImageView = (ImageView) findViewById(R.id.failed_image_1c);
 
-        buttons = new ArrayList<>();
-
         createTable(84, 7);
-
-        exerciseTimer = new ExerciseTimer(30000, 1000, true);
-        exerciseTimer.create();
-        exerciseTimer.setTextView(timerTextView);
-        exerciseTimer.setImageView(failedImageView);
-        exerciseTimer.setContext(this);
-        exerciseTimer.start();
+        startExerciseTimer(30000);
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-    }
 
     @Override
     public void onClick(View view) {
@@ -56,8 +45,7 @@ public class Level_1c_Activity extends Level_1_BaseActivity implements View.OnCl
             intent.putExtra(Preferences.GRATULATION, true);
             intent.putExtra(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
             intent.putExtra(Preferences.SYMBOL, Preferences.SYMBOLS[3]);
-            exerciseTimer.pause();
-            exerciseTimer.cancel();
+            stopExerciseTimer();
             int timePassedFromLastExercise = getIntent()
                     .getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
             timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);

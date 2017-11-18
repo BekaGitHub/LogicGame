@@ -7,14 +7,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.my.swipe.R;
+import com.example.my.swipe.activities.InfoBaseActivity;
 import com.example.my.swipe.fragments.DialogBack;
 import com.example.my.swipe.utils.Preferences;
 
-public class InfoActivity_Level_2 extends AppCompatActivity {
+public class InfoActivity_Level_2 extends InfoBaseActivity {
 
-    private int levelNumber;
-    private int exerciseNumber;
-    private int timePassedFromLastExercise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +26,7 @@ public class InfoActivity_Level_2 extends AppCompatActivity {
         timePassedFromLastExercise = getIntent().
                 getIntExtra(Preferences.TIME_PASSED, 0);
 
-        levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
+        int levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
         exerciseNumber = getIntent().getIntExtra(Preferences.EXERCISE, -1);
         String etage = getString(getIntent().getIntExtra(Preferences.ETAGE, -1));
         boolean gratulation = getIntent().getBooleanExtra(Preferences.GRATULATION, false);
@@ -65,12 +63,5 @@ public class InfoActivity_Level_2 extends AppCompatActivity {
         intent.putExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE,
                 timePassedFromLastExercise);
         startActivity(intent);
-    }
-
-    @Override
-    public void onBackPressed()
-    {
-        DialogBack dialog = new DialogBack();
-        dialog.show(getFragmentManager(), "DialogTag");
     }
 }
