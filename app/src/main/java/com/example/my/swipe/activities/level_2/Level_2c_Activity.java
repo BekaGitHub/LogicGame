@@ -1,5 +1,6 @@
 package com.example.my.swipe.activities.level_2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.my.swipe.R;
+import com.example.my.swipe.activities.LevelDoneActivity;
+import com.example.my.swipe.utils.Evaluator;
 import com.example.my.swipe.utils.ExerciseTimer;
 import com.example.my.swipe.utils.Preferences;
 
@@ -72,7 +75,16 @@ public class Level_2c_Activity extends Level_2_BaseActivity {
             failed((Button) view);
         } else
         {
-            Toast.makeText(this, "asdssaa", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Level_2c_Activity.this, LevelDoneActivity.class);
+
+            exerciseTimer.pause();
+            exerciseTimer.cancel();
+            int timePassedFromLastExercise = getIntent()
+                    .getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
+            timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
+            int points = Evaluator.evaluate(Preferences.LEVEL_2_TOTAL_TIME_IN_SECONDS, timePassed);
+            intent.putExtra(Preferences.LEVEL_POINT, points);
+            startActivity(intent);
         }
     }
 }

@@ -59,7 +59,7 @@ public class Level_1b_Activity extends Level_1_BaseActivity implements View.OnCl
             exerciseTimer.pause();
             exerciseTimer.cancel();
             int timePassedFromLastExercise = getIntent()
-                    .getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, -1);
+                    .getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
             timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
             intent.putExtra(Preferences.TIME_PASSED, timePassed);
             startActivity(intent);

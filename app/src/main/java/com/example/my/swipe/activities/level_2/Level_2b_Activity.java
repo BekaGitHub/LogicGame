@@ -78,6 +78,12 @@ public class Level_2b_Activity extends Level_2_BaseActivity {
             intent.putExtra(Preferences.GRATULATION, true);
             intent.putExtra(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
             intent.putExtra(Preferences.ETAGE, R.string.third);
+            exerciseTimer.pause();
+            exerciseTimer.cancel();
+            int timePassedFromLastExercise = getIntent()
+                    .getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
+            timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
+            intent.putExtra(Preferences.TIME_PASSED, timePassed);
             startActivity(intent);
         }
     }

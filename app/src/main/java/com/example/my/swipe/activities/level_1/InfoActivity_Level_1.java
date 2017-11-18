@@ -27,7 +27,7 @@ public class InfoActivity_Level_1 extends AppCompatActivity {
         TextView exercise = (TextView) findViewById(R.id.exercise_level1);
 
         timePassedFromLastExercise = getIntent().
-                getIntExtra(Preferences.TIME_PASSED, -1);
+                getIntExtra(Preferences.TIME_PASSED, 0);
 
         levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
         exerciseNumber = getIntent().getIntExtra(Preferences.EXERCISE, -1);

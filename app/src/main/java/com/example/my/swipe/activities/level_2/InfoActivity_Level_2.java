@@ -14,6 +14,7 @@ public class InfoActivity_Level_2 extends AppCompatActivity {
 
     private int levelNumber;
     private int exerciseNumber;
+    private int timePassedFromLastExercise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,9 @@ public class InfoActivity_Level_2 extends AppCompatActivity {
         TextView levelCounter = (TextView) findViewById(R.id.level_counter_level2);
         TextView exerciseCounter = (TextView) findViewById(R.id.exercise_counter_level2);
         TextView exercise = (TextView) findViewById(R.id.exercise_level2);
+
+        timePassedFromLastExercise = getIntent().
+                getIntExtra(Preferences.TIME_PASSED, 0);
 
         levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
         exerciseNumber = getIntent().getIntExtra(Preferences.EXERCISE, -1);
@@ -58,6 +62,8 @@ public class InfoActivity_Level_2 extends AppCompatActivity {
                 intent = new Intent(this, Level_2c_Activity.class);
                 break;
         }
+        intent.putExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE,
+                timePassedFromLastExercise);
         startActivity(intent);
     }
 

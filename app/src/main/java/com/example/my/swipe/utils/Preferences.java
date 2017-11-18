@@ -30,5 +30,10 @@ public class Preferences {
     public static int EXERCISE_COUNTER = 1;
 
     public static final String LEVEL_POINT = "levelPoint";
-    public static final int LEVEL_1_TOTAL_TIME_IN_SECONDS = 120;
+    private static final int LEVEL_1_EXERCISE_TIME_IN_SECONDS = 30;
+    private static final int LEVEL_2_EXERCISE_TIME_IN_SECONDS = 90;
+    public static final int LEVEL_1_TOTAL_TIME_IN_SECONDS =
+            LEVEL_1_EXERCISE_TIME_IN_SECONDS * 4;
+    public static final int LEVEL_2_TOTAL_TIME_IN_SECONDS =
+            LEVEL_2_EXERCISE_TIME_IN_SECONDS * 4;
 }
