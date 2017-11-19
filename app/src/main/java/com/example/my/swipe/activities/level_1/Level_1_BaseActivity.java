@@ -39,7 +39,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         buttons = new ArrayList<>();
     }
 
-    protected Button createButton(String text) {
+    protected Button createButton(String text, boolean isCircle) {
 
         DisplayMetrics dm = getResources().getDisplayMetrics();
         float dpInPx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, dm);
@@ -49,7 +49,10 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         button.setText(text);
         button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         button.setTextColor(ContextCompat.getColor(this, R.color.button_text_color));
-        button.setBackgroundResource(R.drawable.buttonshape);
+        if (isCircle)
+            button.setBackgroundResource(R.drawable.round_button);
+        else
+            button.setBackgroundResource(R.drawable.buttonshape);
 
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams();
         layoutParams.setMargins(7, 7, 7, 7);
@@ -75,7 +78,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         super.failed(clickedButton);
     }
 
-    protected void createTable(int buttonNumber, int columnNumer)
+    protected void createTable(int buttonNumber, int columnNumer, boolean isCircle)
     {
         Random random = new Random();
         int randomNumber = random.nextInt(buttonNumber);
@@ -88,10 +91,10 @@ public abstract class Level_1_BaseActivity extends BaseActivity
             }
             Button btn;
             if(i == randomNumber) {
-                btn = createButton(targetSymbol);
+                btn = createButton(targetSymbol, isCircle);
                 targetPosition = randomNumber;
             } else {
-                btn = createButton(otherSymbol);
+                btn = createButton(otherSymbol, isCircle);
             }
             buttons.add(btn);
             btn.setOnClickListener(this);

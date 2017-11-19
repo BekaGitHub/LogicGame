@@ -8,5 +8,5 @@ import com.example.my.swipe.R;
 
 public class Image {
     public static final int[] IMAGES = {R.drawable.tabelle, R.drawable.haus,
-            R.drawable.figur_gleich};
+            R.drawable.figur_gleich, R.drawable.smile};
 }

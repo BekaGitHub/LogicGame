@@ -35,7 +35,7 @@ public class Level_1d_Activity extends Level_1_BaseActivity implements View.OnCl
         timerTextView = (TextView) findViewById(R.id.timer_text_view_1d);
         failedImageView = (ImageView) findViewById(R.id.failed_image_1d);
 
-        createTable(84, 7);
+        createTable(84, 7, false);
         startExerciseTimer(30000);
     }
 

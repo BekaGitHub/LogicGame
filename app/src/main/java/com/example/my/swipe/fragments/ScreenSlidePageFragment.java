@@ -67,6 +67,8 @@ public class ScreenSlidePageFragment extends Fragment {
                         intent.putExtra(Preferences.ERSTE, R.string.first);
                         intent.putExtra(Preferences.ZWEITE, R.string.second);
                         break;
+                    case 3:
+                        break;
                 }
                 intent.putExtra(Preferences.LEVEL,
                         Preferences.LEVEL_COUNTER + fragmentPosition);

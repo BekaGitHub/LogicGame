@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Button;
 
+import com.example.my.swipe.R;
+
 /**
  * Created by EmpaT on 02.11.2017.
  */
@@ -21,6 +23,7 @@ public class SquareButton extends Button {
         super(context);
         this.width = width;
         this.height = height;
+//        this.setBackground(getResources().getDrawable(R.drawable.round_button));
     }
 
     public SquareButton(Context context, AttributeSet attrs) {
