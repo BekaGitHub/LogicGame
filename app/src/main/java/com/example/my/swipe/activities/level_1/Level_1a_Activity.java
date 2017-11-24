@@ -41,17 +41,27 @@ public class Level_1a_Activity extends Level_1_BaseActivity{
     @Override
     public void onClick(View view) {
         Button clickedButton = (Button) view;
+        Bundle bundle;
         if (clickedButton.getText().equals(Preferences.SYMBOLS[0])) {
             Intent intent = new Intent(this, InfoActivity_Level_1.class);
-            intent.putExtra(Preferences.GRATULATION, true);
-            intent.putExtra(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-            intent.putExtra(Preferences.SYMBOL, Preferences.SYMBOLS[1]);
+            bundle = new Bundle();
+            bundle.putBoolean(Preferences.GRATULATION, true);
+            bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
+            bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[1]);
+
             stopExerciseTimer();
             timePassed = (int) (exerciseTimer.timePassed()/1000);
-            intent.putExtra(Preferences.TIME_PASSED, timePassed);
+            bundle.putInt(Preferences.TIME_PASSED, timePassed);
+            intent.putExtra(Preferences.BUNDLE, bundle);
             startActivity(intent);
         } else {
-            failed(clickedButton);
+            bundle = new Bundle();
+            bundle.putInt(Preferences.LEVEL, 1);
+            bundle.putInt(Preferences.EXERCISE, 1);
+            bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[0]);
+            bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
+
+            failed(clickedButton, bundle);
         }
     }
 

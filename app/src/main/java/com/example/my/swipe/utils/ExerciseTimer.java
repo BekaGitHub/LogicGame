@@ -1,6 +1,7 @@
 package com.example.my.swipe.utils;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
@@ -205,6 +206,16 @@ public class ExerciseTimer extends CountDownTimer {
                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
     }
 
+    private Bundle bundle;
+
+    public Bundle getBundle() {
+        return bundle;
+    }
+
+    public void setBundle(Bundle bundle) {
+        this.bundle = bundle;
+    }
+
     @Override
     public void onFinish() {
         Util.showFailureAnimation(context, imageView, R.mipmap.failure);
@@ -215,7 +226,7 @@ public class ExerciseTimer extends CountDownTimer {
             @Override
             public void run() {
                 imageView.setVisibility(View.INVISIBLE);
-                Util.showDialogFailure(context);
+                Util.showDialogFailure(context, bundle);
             }
         }, 1500);
 

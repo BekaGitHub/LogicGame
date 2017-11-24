@@ -30,6 +30,8 @@ public class DialogFailure extends DialogFragment {
     private int figureNumber_1 = -1;
     private int figureNumber_2 = -1;
 
+    private Class levelInfoActivity;
+
     public DialogFailure() {
 
     }
@@ -52,7 +54,6 @@ public class DialogFailure extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View dialogView = View.inflate(getActivity(), R.layout.dialog_failure_layout, container);
 
         Button restart = (Button) dialogView.findViewById(R.id.restart);
@@ -61,21 +62,11 @@ public class DialogFailure extends DialogFragment {
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), switchLevel(level));
+                Bundle bundle = getArguments();
+                Class levelInfoClass = (Class) bundle.get(Preferences.CLASS);
+                Intent intent = new Intent(getActivity(), levelInfoClass);
+                intent.putExtra(Preferences.BUNDLE, bundle);
 
-                if (levelNumber != -1)
-                    intent.putExtra(Preferences.LEVEL, levelNumber);
-                if (!symbol.equals(""))
-                    intent.putExtra(Preferences.SYMBOL, symbol);
-                if (etage != -1)
-                    intent.putExtra(Preferences.ETAGE, etage);
-                if (figureNumber_1 != -1 && figureNumber_2 != -1)
-                {
-                    intent.putExtra(Preferences.ERSTE, figureNumber_1);
-                    intent.putExtra(Preferences.ZWEITE, figureNumber_2);
-                }
-
-                intent.putExtra(Preferences.EXERCISE, 1);
                 startActivity(intent);
             }
         });

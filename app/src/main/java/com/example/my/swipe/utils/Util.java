@@ -2,6 +2,7 @@ package com.example.my.swipe.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -33,20 +34,13 @@ public class Util
         imageView.startAnimation(animation);
     }
 
-    public static void showDialogFailure(Context context)
+    public static void showDialogFailure(Context context, Bundle bundle)
     {
         DialogFailure dialogFailure = new DialogFailure();
         dialogFailure.setCancelable(false);
-        Activity activity = (Activity) context;
+        dialogFailure.setArguments(bundle);
 
-        if (activity instanceof Level_1_BaseActivity)
-            dialogFailure.setLevel(Level.EINS);
-        else if (activity instanceof Level_2_BaseActivity)
-            dialogFailure.setLevel(Level.ZWEI);
-        else if (activity instanceof Level_3_BaseActivity)
-            dialogFailure.setLevel(Level.DREI);
-
-        dialogFailure.show(activity.getFragmentManager(), "TAG");
+        dialogFailure.show(((Activity)context).getFragmentManager(), "TAG");
     }
 
 //    public int evaluateLevel(int timeSpent, int levelDuration)

@@ -27,7 +27,8 @@ public class LevelDoneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_level_done);
 
         imageViews = new ArrayList<>();
-        levelMindCounter = getIntent().getIntExtra(Preferences.LEVEL_POINT, 0);
+        Bundle bundle = getIntent().getBundleExtra(Preferences.BUNDLE);
+        levelMindCounter = bundle.getInt(Preferences.LEVEL_POINT, 0);
 
         ImageView done_image_1 = (ImageView) findViewById(R.id.done_image_1);
         ImageView done_image_2 = (ImageView) findViewById(R.id.done_image_2);

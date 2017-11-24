@@ -46,22 +46,35 @@ public class Level_3b_Activity extends Level_3_BaseActivity
     @Override
     public void onClick(View view)
     {
+        Bundle bundle;
         if (view.getId() == formButton.getId() ||
                 view.getId() ==nothingButton.getId())
         {
-            failed((Button) view);
+            bundle = new Bundle();
+            bundle.putInt(Preferences.LEVEL, 3);
+            bundle.putInt(Preferences.EXERCISE, 1);
+            bundle.putInt(Preferences.FIGURE_1, R.string.first);
+            bundle.putInt(Preferences.FIGURE_2, R.string.second);
+            bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
+
+            failed((Button) view, bundle);
         } else 
         {
             Intent intent = new Intent(this, InfoActivity_Level_3.class);
-            intent.putExtra(Preferences.GRATULATION, true);
-            intent.putExtra(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-            intent.putExtra(Preferences.ZWEITE, R.string.second);
-            intent.putExtra(Preferences.VIERTE, R.string.fourth);
+            bundle = new Bundle();
+            bundle.putBoolean(Preferences.GRATULATION, true);
+            bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
+            bundle.putInt(Preferences.FIGURE_1, R.string.second);
+            bundle.putInt(Preferences.FIGURE_1, R.string.fourth);
             stopExerciseTimer();
+
             int timePassedFromLastExercise = getIntent()
-                    .getIntExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
+                    .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
+                    .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
+
             timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
-            intent.putExtra(Preferences.TIME_PASSED, timePassed);
+            bundle.putInt(Preferences.TIME_PASSED, timePassed);
+            intent.putExtra(Preferences.BUNDLE, bundle);
             startActivity(intent);
         }
     }

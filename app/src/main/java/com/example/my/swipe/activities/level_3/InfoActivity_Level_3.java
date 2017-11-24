@@ -24,23 +24,20 @@ public class InfoActivity_Level_3 extends InfoBaseActivity {
         TextView exerciseCounter = (TextView) findViewById(R.id.exercise_counter_level3);
         TextView exercise = (TextView) findViewById(R.id.exercise_level3);
 
-        timePassedFromLastExercise = getIntent().
-                getIntExtra(Preferences.TIME_PASSED, 0);
+        Bundle bundle = getIntent().getBundleExtra(Preferences.BUNDLE);
 
-        int levelNumber = getIntent().getIntExtra(Preferences.LEVEL, -1);
-        exerciseNumber = getIntent().getIntExtra(Preferences.EXERCISE, -1);
-        boolean gratulation = getIntent().getBooleanExtra(Preferences.GRATULATION, false);
-        int figureNumber_1 = getIntent().getIntExtra(Preferences.ERSTE, 0);
-        int figureNumber_2 = getIntent().getIntExtra(Preferences.ZWEITE, 0);
-        int figureNumber_3 = getIntent().getIntExtra(Preferences.DRITTE, 0);
-        int figureNumber_4 = getIntent().getIntExtra(Preferences.VIERTE, 0);
-        int figureNumber_5 = getIntent().getIntExtra(Preferences.FUENFTE, 0);
+        timePassedFromLastExercise = bundle.getInt(Preferences.TIME_PASSED, 0);
+
+        int levelNumber = bundle.getInt(Preferences.LEVEL, 3);
+        exerciseNumber = bundle.getInt(Preferences.EXERCISE, 1);
+        boolean gratulation = bundle.getBoolean(Preferences.GRATULATION, false);
+
+        //aq gavcherdi 19.11.2017
+        int figure1 = bundle.getInt(Preferences.FIGURE_1, R.string.first);
+        int figure2 = bundle.getInt(Preferences.FIGURE_2, R.string.second);
 
         String infoText = "";
-        if(levelNumber != -1) {
-            infoText = getString(R.string.level_counter, ""+ levelNumber);
-        }
-
+        infoText = getString(R.string.level_counter, ""+ levelNumber);
         if (gratulation)
             infoText = getString(R.string.exercise_done);
 
@@ -48,22 +45,9 @@ public class InfoActivity_Level_3 extends InfoBaseActivity {
 
         //Figuren, deren Gleichheit erraten werden muss, konnen folgende
         //Positionen annehmen: (1,2), (3,5), (2,4)
-        if (figureNumber_1 != 0 && figureNumber_2 != 0)
-        {
-            String first = getString(figureNumber_1);
-            String second = getString(figureNumber_2);
-            exerciseInfo = getString(R.string.common_figures_easy, first, second);
-        } else if (figureNumber_3 != 0 && figureNumber_5 != 0)
-        {
-            String third = getString(figureNumber_3);
-            String fifth = getString(figureNumber_5);
-            exerciseInfo = getString(R.string.common_figures_easy, third, fifth);
-        } else if (figureNumber_2 != 0 && figureNumber_4 != 0)
-        {
-            String second = getString(figureNumber_2);
-            String fourth = getString(figureNumber_4);
-            exerciseInfo = getString(R.string.common_figures_easy, second, fourth);
-        }
+        String text1 = getString(figure1);
+        String text2 = getString(figure2);
+        exerciseInfo = getString(R.string.common_figures_easy, text1, text2);
 
         levelCounter.setText(infoText);
         exerciseCounter.setText(exerciseCounterText);
@@ -72,6 +56,7 @@ public class InfoActivity_Level_3 extends InfoBaseActivity {
 
     public void handleClick(View view) {
         Intent intent  = null;
+        Bundle bundle = new Bundle();
         switch (exerciseNumber) {
             case 1:
                 intent = new Intent(this, Level_3a_Activity.class);
@@ -83,9 +68,10 @@ public class InfoActivity_Level_3 extends InfoBaseActivity {
                 intent = new Intent(this, Level_3c_Activity.class);
                 break;
         }
-        intent.putExtra(Preferences.EXERCISE_INFO, exerciseInfo);
-        intent.putExtra(Preferences.TIME_PASSED_FROM_LAST_EXERCISE,
+
+        bundle.putInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE,
                 timePassedFromLastExercise);
+        intent.putExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY, bundle);
         startActivity(intent);
     }
 }

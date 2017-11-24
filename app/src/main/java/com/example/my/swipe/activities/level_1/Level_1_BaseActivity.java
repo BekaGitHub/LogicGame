@@ -62,7 +62,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     }
 
     @Override
-    protected void failed(Button clickedButton)
+    protected void failed(Button clickedButton, Bundle bundle)
     {
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
         // Use bounce interpolator with amplitude 0.2 and frequency 20
@@ -75,7 +75,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         }
         buttons.get(targetPosition).setTextColor(Color.GREEN);
 
-        super.failed(clickedButton);
+        super.failed(clickedButton, bundle);
     }
 
     protected void createTable(int buttonNumber, int columnNumer, boolean isCircle)
@@ -92,6 +92,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
             Button btn;
             if(i == randomNumber) {
                 btn = createButton(targetSymbol, isCircle);
+                btn.setTextColor(Color.GREEN);
                 targetPosition = randomNumber;
             } else {
                 btn = createButton(otherSymbol, isCircle);
@@ -101,5 +102,11 @@ public abstract class Level_1_BaseActivity extends BaseActivity
             tableRow.addView(btn);
             i++;
         }
+    }
+
+    @Override
+    public Class getLevelInfoClass()
+    {
+        return InfoActivity_Level_1.class;
     }
 }

@@ -51,28 +51,34 @@ public class ScreenSlidePageFragment extends Fragment {
         displayImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = null;
-                switch (fragmentPosition)
-                {
-                    case 0:
-                        intent = new Intent(getActivity(), InfoActivity_Level_1.class);
-                        intent.putExtra(Preferences.SYMBOL, Preferences.SYMBOLS[0]);
-                        break;
-                    case 1:
-                        intent = new Intent(getActivity(), InfoActivity_Level_2.class);
-                        intent.putExtra(Preferences.ETAGE, R.string.second);
-                        break;
-                    case 2:
-                        intent = new Intent(getActivity(), InfoActivity_Level_3.class);
-                        intent.putExtra(Preferences.ERSTE, R.string.first);
-                        intent.putExtra(Preferences.ZWEITE, R.string.second);
-                        break;
-                    case 3:
-                        break;
-                }
-                intent.putExtra(Preferences.LEVEL,
+                Bundle defaultBundle = new Bundle();
+                defaultBundle.putInt(Preferences.LEVEL,
                         Preferences.LEVEL_COUNTER + fragmentPosition);
-                intent.putExtra(Preferences.EXERCISE, Preferences.EXERCISE_COUNTER);
+                defaultBundle.putInt(Preferences.EXERCISE,
+                        Preferences.EXERCISE_COUNTER);
+
+                Class infoActivityClass = Preferences.INFO_ACTIVITIES[fragmentPosition];
+
+                Intent intent = new Intent(getActivity(), infoActivityClass);
+                intent.putExtra(Preferences.BUNDLE, defaultBundle);
+//                switch (fragmentPosition)
+//                {
+//                    case 0:
+//                        intent = new Intent(getActivity(), InfoActivity_Level_1.class);
+//                        intent.putExtra(Preferences.SYMBOL, Preferences.SYMBOLS[0]);
+//                        break;
+//                    case 1:
+//                        intent = new Intent(getActivity(), InfoActivity_Level_2.class);
+//                        intent.putExtra(Preferences.ETAGE, R.string.second);
+//                        break;
+//                    case 2:
+//                        intent = new Intent(getActivity(), InfoActivity_Level_3.class);
+//                        intent.putExtra(Preferences.ERSTE, R.string.first);
+//                        intent.putExtra(Preferences.ZWEITE, R.string.second);
+//                        break;
+//                    case 3:
+//                        break;
+//                }
                 startActivity(intent);
             }
         });

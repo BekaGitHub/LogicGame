@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.BaseActivity;
+import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
 
 public abstract class Level_2_BaseActivity extends BaseActivity
         implements View.OnClickListener{
@@ -31,5 +32,11 @@ public abstract class Level_2_BaseActivity extends BaseActivity
         heidi = getString(R.string.heidi);
         kurt = getString(R.string.kurt);
         postS = getString(R.string.postS);
+    }
+
+    @Override
+    public Class getLevelInfoClass()
+    {
+        return InfoActivity_Level_2.class;
     }
 }

@@ -1,5 +1,9 @@
 package com.example.my.swipe.utils;
 
+import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
+import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
+import com.example.my.swipe.activities.level_3.InfoActivity_Level_3;
+
 /**
  * Created by EmpaT on 02.11.2017.
  */
@@ -20,6 +24,9 @@ public class Preferences {
     public static final String FUENFTE = "fuenfte";
     public static final String SECHSTE = "sechste";
 
+    public static final String FIGURE_1 = "figure1";
+    public static final String FIGURE_2 = "figure2";
+
     public static final String PREFS = "preference";
     public static final String PREF_MIND_NUMBER_LEVEL_1 = "prefMindNumberLevel1";
 
@@ -32,6 +39,16 @@ public class Preferences {
             "timePassedFromLastExercise";
 
     public static final String[] SYMBOLS = {"+", ":)", "<", "u"};
+    public static final Class[] INFO_ACTIVITIES = {
+            InfoActivity_Level_1.class,
+            InfoActivity_Level_2.class,
+            InfoActivity_Level_3.class
+    };
+
+    public static final String CLASS = "class";
+    public static final String BUNDLE = "bundle";
+    public static final String BUNDLE_FROM_INFO_ACTIVITY =
+            "bundleFromInfoActivity";
 
     public static int LEVEL_COUNTER = 1;
     public static int EXERCISE_COUNTER = 1;
@@ -48,4 +65,5 @@ public class Preferences {
             LEVEL_2_EXERCISE_TIME_IN_SECONDS * 3;
     public static final int LEVEL_3_TOTAL_TIME_IN_SECONDS =
             LEVEL_3_EXERCISE_TIME_IN_SECONDS * 3;
+
 }
