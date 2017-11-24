@@ -71,6 +71,7 @@ public class InfoActivity_Level_3 extends InfoBaseActivity {
 
         bundle.putInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE,
                 timePassedFromLastExercise);
+        bundle.putString(Preferences.EXERCISE_INFO, exerciseInfo);
         intent.putExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY, bundle);
         startActivity(intent);
     }

@@ -34,7 +34,9 @@ public class Level_3c_Activity extends Level_3_BaseActivity
         timerTextView = (TextView) findViewById(R.id.timer_text_view_3c);
         failedImageView = (ImageView) findViewById(R.id.failed_image_3c);
 
-        exerciseInfoTextView.setText(getIntent().getStringExtra(Preferences.EXERCISE_INFO));
+        exerciseInfoTextView.setText(getIntent()
+                .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
+                .getString(Preferences.EXERCISE_INFO));
 
         colorButton.setOnClickListener(this);
         formButton.setOnClickListener(this);
