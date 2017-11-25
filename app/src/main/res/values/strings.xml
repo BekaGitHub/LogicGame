@@ -8,7 +8,9 @@
     <string name="level_1_titel">იპოვე სიმბოლო</string>
     <string name="level_2_titel">ვინ სად ცხოვრობს</string>
     <string name="level_3_titel">რა აქვთ ფიგურებს საერთო</string>
+    <string name="level_4_titel">იპოვე სმაილი</string>
     <string name="find_symbol">იპოვე სიმბოლო: %1$s</string>
+    <string name="find_smile">იპოვე სმაილი: </string>
     <string name="start_game">თამაშის დასაწყებად დააკლიკე ეკრანს</string>
     <string name="exercise_done">გილოცავ, შენ წარმატებით დაძლიე დავალება</string>
     <string name="level_done">გილოცავ</string>

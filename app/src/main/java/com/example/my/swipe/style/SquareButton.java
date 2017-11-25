@@ -14,6 +14,7 @@ public class SquareButton extends Button {
 
     private int width;
     private int height;
+    private int backgroundID;
 
     public SquareButton(Context context) {
         super(context);
@@ -23,7 +24,6 @@ public class SquareButton extends Button {
         super(context);
         this.width = width;
         this.height = height;
-//        this.setBackground(getResources().getDrawable(R.drawable.round_button));
     }
 
     public SquareButton(Context context, AttributeSet attrs) {
@@ -36,6 +36,20 @@ public class SquareButton extends Button {
 
     public SquareButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+    @Override
+    public void setBackgroundResource(int resid) {
+        super.setBackgroundResource(resid);
+        backgroundID = resid;
+    }
+
+    public int getBackgroundID() {
+        return backgroundID;
+    }
+
+    public void setBackgroundID(int backgroundID) {
+        this.backgroundID = backgroundID;
     }
 
     @Override

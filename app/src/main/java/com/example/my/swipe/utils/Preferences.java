@@ -3,6 +3,7 @@ package com.example.my.swipe.utils;
 import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
 import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
 import com.example.my.swipe.activities.level_3.InfoActivity_Level_3;
+import com.example.my.swipe.activities.level_4.InfoActivity_Level_4;
 
 /**
  * Created by EmpaT on 02.11.2017.
@@ -13,6 +14,7 @@ public class Preferences {
     public static final String GRATULATION = "gratulation";
     public static final String EXERCISE = "exercise";
     public static final String SYMBOL = "symbol";
+    public static final String SMILE = "smile";
     public static final String FROM = "from";
     public static final String LEVEL = "level";
     public static final String ETAGE = "etage";
@@ -42,7 +44,8 @@ public class Preferences {
     public static final Class[] INFO_ACTIVITIES = {
             InfoActivity_Level_1.class,
             InfoActivity_Level_2.class,
-            InfoActivity_Level_3.class
+            InfoActivity_Level_3.class,
+            InfoActivity_Level_4.class
     };
 
     public static final String CLASS = "class";
@@ -59,11 +62,14 @@ public class Preferences {
     private static final int LEVEL_1_EXERCISE_TIME_IN_SECONDS = 30;
     private static final int LEVEL_2_EXERCISE_TIME_IN_SECONDS = 90;
     private static final int LEVEL_3_EXERCISE_TIME_IN_SECONDS = 10;
+    public static final int LEVEL_4_EXERCISE_TIME_IN_SECONDS = 45;
     public static final int LEVEL_1_TOTAL_TIME_IN_SECONDS =
             LEVEL_1_EXERCISE_TIME_IN_SECONDS * 4;
     public static final int LEVEL_2_TOTAL_TIME_IN_SECONDS =
             LEVEL_2_EXERCISE_TIME_IN_SECONDS * 3;
     public static final int LEVEL_3_TOTAL_TIME_IN_SECONDS =
             LEVEL_3_EXERCISE_TIME_IN_SECONDS * 3;
+    public static final int LEVEL_4_TOTAL_TIME_IN_SECONDS =
+            LEVEL_4_EXERCISE_TIME_IN_SECONDS * 4;
 
 }

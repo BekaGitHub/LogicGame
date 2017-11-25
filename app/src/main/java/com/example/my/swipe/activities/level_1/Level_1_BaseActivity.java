@@ -39,7 +39,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         buttons = new ArrayList<>();
     }
 
-    protected Button createButton(String text, boolean isCircle) {
+    protected Button createButton(String text) {
 
         DisplayMetrics dm = getResources().getDisplayMetrics();
         float dpInPx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, dm);
@@ -49,10 +49,24 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         button.setText(text);
         button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         button.setTextColor(ContextCompat.getColor(this, R.color.button_text_color));
-        if (isCircle)
-            button.setBackgroundResource(R.drawable.round_button);
-        else
-            button.setBackgroundResource(R.drawable.buttonshape);
+
+        TableRow.LayoutParams layoutParams = new TableRow.LayoutParams();
+        layoutParams.setMargins(7, 7, 7, 7);
+        button.setLayoutParams(layoutParams);
+
+        return button;
+    }
+
+    protected Button createRotateButtonWithImage(String targetImage) {
+
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        float dpInPx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, dm);
+
+        SquareButton button = new SquareButton(this, (int)dpInPx, (int)dpInPx);
+        button.setAllCaps(false);
+        button.setBackgroundResource(Integer.parseInt(targetImage));
+        button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
+        button.setTextColor(ContextCompat.getColor(this, R.color.button_text_color));
 
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams();
         layoutParams.setMargins(7, 7, 7, 7);
@@ -91,11 +105,24 @@ public abstract class Level_1_BaseActivity extends BaseActivity
             }
             Button btn;
             if(i == randomNumber) {
-                btn = createButton(targetSymbol, isCircle);
-                btn.setTextColor(Color.GREEN);
+                if (isCircle)
+                {
+                    btn = createRotateButtonWithImage(targetSymbol);
+                } else
+                {
+                    btn = createButton(targetSymbol);
+                    btn.setTextColor(Color.GREEN);
+                }
                 targetPosition = randomNumber;
-            } else {
-                btn = createButton(otherSymbol, isCircle);
+            } else
+            {
+                if (isCircle)
+                {
+                    btn = createRotateButtonWithImage(otherSymbol);
+                } else
+                {
+                    btn = createButton(otherSymbol);
+                }
             }
             buttons.add(btn);
             btn.setOnClickListener(this);
