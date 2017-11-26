@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/play"
         android:text="@string/continue_game"
-        android:textSize="@dimen/mind_counter_dimen"
+        android:textSize="@dimen/brain_counter_dimen"
         android:gravity="center"/>
 
     <Button
@@ -21,6 +21,6 @@
         android:id="@+id/main_menu"
         android:layout_below="@+id/play"
         android:text="@string/main"
-        android:textSize="@dimen/mind_counter_dimen"
+        android:textSize="@dimen/brain_counter_dimen"
         android:gravity="center"/>
 </RelativeLayout>

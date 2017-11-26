@@ -10,6 +10,6 @@
     <dimen name="exercise_counter">15sp</dimen>
     <dimen name="image_width">350dp</dimen>
     <dimen name="image_height">450dp</dimen>
-    <dimen name="mind_counter_dimen">25sp</dimen>
+    <dimen name="brain_counter_dimen">25sp</dimen>
     <dimen name="exercise_counter_vertical_margin">120dp</dimen>
 </resources>

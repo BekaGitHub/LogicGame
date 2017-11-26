@@ -49,7 +49,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         button.setText(text);
         button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
         button.setTextColor(ContextCompat.getColor(this, R.color.button_text_color));
-
+        button.setBackgroundResource(R.drawable.buttonshape);
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams();
         layoutParams.setMargins(7, 7, 7, 7);
         button.setLayoutParams(layoutParams);

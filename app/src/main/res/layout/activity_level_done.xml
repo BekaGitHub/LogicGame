@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/mind_number"
             android:textColor="@color/text_color"
-            android:textSize="@dimen/mind_counter_dimen"
+            android:textSize="@dimen/brain_counter_dimen"
             android:text="+0"
             />
 

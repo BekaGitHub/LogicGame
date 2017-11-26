@@ -5,6 +5,8 @@
     <string name="hello_text">დაწერე რამე მისასალმებელი ტექსტი</string>
     <string name="level_counter">დონე %1$s</string>
     <string name="exercise_counter">დავალება %1$s/%2$s</string>
+    <string name="total_brains">ჯამი %1$s/400</string>
+    <string name="level_brains">%1$s/4</string>
     <string name="level_1_titel">იპოვე სიმბოლო</string>
     <string name="level_2_titel">ვინ სად ცხოვრობს</string>
     <string name="level_3_titel">რა აქვთ ფიგურებს საერთო</string>
