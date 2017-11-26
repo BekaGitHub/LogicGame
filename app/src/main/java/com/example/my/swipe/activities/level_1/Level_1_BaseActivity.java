@@ -72,6 +72,9 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         layoutParams.setMargins(7, 7, 7, 7);
         button.setLayoutParams(layoutParams);
 
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.rotate_around_center_point);
+        button.startAnimation(animation);
+
         return button;
     }
 

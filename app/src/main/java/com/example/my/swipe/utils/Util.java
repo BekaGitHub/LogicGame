@@ -2,6 +2,8 @@ package com.example.my.swipe.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -41,6 +43,26 @@ public class Util
         dialogFailure.setArguments(bundle);
 
         dialogFailure.show(((Activity)context).getFragmentManager(), "TAG");
+    }
+
+    public static int switchColor(String colorName, Context context)
+    {
+        Resources res = context.getResources();
+
+        if (colorName.equals(res.getString(R.string.red)))
+            return Color.RED;
+        else if (colorName.equals(res.getString(R.string.green)))
+            return Color.GREEN;
+        else if (colorName.equals(res.getString(R.string.black)))
+            return Color.BLACK;
+        else if (colorName.equals(res.getString(R.string.yellow)))
+            return Color.YELLOW;
+        else if (colorName.equals(res.getString(R.string.black)))
+            return Color.BLUE;
+        else if (colorName.equals(res.getString(R.string.magenta)))
+            return Color.MAGENTA;
+
+        return -1;
     }
 
 //    public int evaluateLevel(int timeSpent, int levelDuration)

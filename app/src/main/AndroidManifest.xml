@@ -29,14 +29,16 @@
         <activity android:name=".activities.level_2.Level_2c_Activity" />
         <activity android:name=".activities.LevelDoneActivity" />
         <activity android:name=".activities.level_3.InfoActivity_Level_3" />
-        <activity android:name=".activities.level_3.Level_3a_Activity"/>
-        <activity android:name=".activities.level_3.Level_3b_Activity"/>
-        <activity android:name=".activities.level_3.Level_3c_Activity"/>
+        <activity android:name=".activities.level_3.Level_3a_Activity" />
+        <activity android:name=".activities.level_3.Level_3b_Activity" />
+        <activity android:name=".activities.level_3.Level_3c_Activity" />
         <activity android:name=".activities.level_4.InfoActivity_Level_4" />
-        <activity android:name=".activities.level_4.Level_4a_Activity"/>
-        <activity android:name=".activities.level_4.Level_4b_Activity"/>
-        <activity android:name=".activities.level_4.Level_4c_Activity"/>
-        <activity android:name=".activities.level_4.Level_4d_Activity"/>
+        <activity android:name=".activities.level_4.Level_4a_Activity" />
+        <activity android:name=".activities.level_4.Level_4b_Activity" />
+        <activity android:name=".activities.level_4.Level_4c_Activity" />
+        <activity android:name=".activities.level_4.Level_4d_Activity" />
+        <activity android:name=".activities.level_5.InfoActivity_Level_5" />
+        <activity android:name=".activities.level_5.Level_5a_Activity"></activity>
     </application>
 
 </manifest>
