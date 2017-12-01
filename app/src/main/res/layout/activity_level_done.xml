@@ -105,7 +105,14 @@
         app:ball_size_to_size="6dp"
         app:shake_direction="horizontal"
         tools:context="com.example.my.swipe.activities.LevelDoneActivity">
-
     </com.github.glomadrian.grav.GravView>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="@string/next"
+        android:onClick="handleNextButton"/>
 
 </RelativeLayout>

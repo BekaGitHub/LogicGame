@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.LevelDoneActivity;
+import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
+import com.example.my.swipe.activities.level_4.InfoActivity_Level_4;
 import com.example.my.swipe.utils.Evaluator;
 import com.example.my.swipe.utils.Preferences;
 
@@ -74,6 +76,7 @@ public class Level_3c_Activity extends Level_3_BaseActivity
 
             int points = Evaluator.evaluate(Preferences.LEVEL_3_TOTAL_TIME_IN_SECONDS, timePassed);
             bundle.putInt(Preferences.LEVEL_POINT, points);
+            bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_4.class);
             intent.putExtra(Preferences.BUNDLE, bundle);
             startActivity(intent);
         }

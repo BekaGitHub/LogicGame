@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.LevelDoneActivity;
+import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
+import com.example.my.swipe.activities.level_5.InfoActivity_Level_5;
 import com.example.my.swipe.style.SquareButton;
 import com.example.my.swipe.utils.Evaluator;
 import com.example.my.swipe.utils.Preferences;
@@ -53,6 +55,7 @@ public class Level_4d_Activity extends Level_4_BaseActivity{
             timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
             int points = Evaluator.evaluate(Preferences.LEVEL_4_TOTAL_TIME_IN_SECONDS, timePassed);
             bundle.putInt(Preferences.LEVEL_POINT, points);
+            bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_5.class);
             intent.putExtra(Preferences.BUNDLE, bundle);
             startActivity(intent);
         } else {

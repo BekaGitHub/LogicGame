@@ -93,4 +93,6 @@ public class Preferences {
             LEVEL_4_EXERCISE_TIME_IN_SECONDS * 4;
     public static final int LEVEL_5_TOTAL_TIME_IN_SECONDS = 25;
 
+    public static final String NEXT_LEVEL = "nextLevel";
+
 }

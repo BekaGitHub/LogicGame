@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.LevelDoneActivity;
+import com.example.my.swipe.activities.level_3.InfoActivity_Level_3;
 import com.example.my.swipe.utils.Evaluator;
 import com.example.my.swipe.utils.ExerciseTimer;
 import com.example.my.swipe.utils.Preferences;
@@ -80,6 +81,7 @@ public class Level_2c_Activity extends Level_2_BaseActivity {
 
             int points = Evaluator.evaluate(Preferences.LEVEL_2_TOTAL_TIME_IN_SECONDS, timePassed);
             bundle.putInt(Preferences.LEVEL_POINT, points);
+            bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_3.class);
             intent.putExtra(Preferences.BUNDLE, bundle);
             startActivity(intent);
         }
