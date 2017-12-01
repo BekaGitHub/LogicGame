@@ -7,63 +7,58 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
-
 import com.example.my.swipe.R;
-import com.example.my.swipe.utils.ExerciseTimer;
 import com.example.my.swipe.utils.Preferences;
 
-import java.util.ArrayList;
+public class Level_1b_Activity extends Level_1_BaseActivity implements View.OnClickListener {
 
-public class Level_1b_Activity extends Level_1_BaseActivity implements View.OnClickListener{
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    //Nummer der aktuelle Aufgabe
+    Preferences.EXERCISE_COUNTER = 2;
+    //Nummer des aktuellen Level
+    Preferences.LEVEL_COUNTER = 1;
+    targetSymbol = ":)";
+    otherSymbol = ":|";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        //Nummer der aktuelle Aufgabe
-        Preferences.EXERCISE_COUNTER = 2;
-        //Nummer des aktuellen Level
-        Preferences.LEVEL_COUNTER = 1;
-        targetSymbol = ":)";
-        otherSymbol = ":|";
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_level_1b);
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_1b);
+    tableLayout = (TableLayout) findViewById(R.id.table_layout_level_1b);
+    timerTextView = (TextView) findViewById(R.id.timer_text_view_1b);
+    failedImageView = (ImageView) findViewById(R.id.failed_image_1b);
 
-        tableLayout = (TableLayout) findViewById(R.id.table_layout_level_1b);
-        timerTextView = (TextView) findViewById(R.id.timer_text_view_1b);
-        failedImageView = (ImageView) findViewById(R.id.failed_image_1b);
+    createTable(84, 7, false);
+    startExerciseTimer(Preferences.LEVEL_1_EXERCISE_TIME_IN_SECONDS * 1000);
+  }
 
-        createTable(84, 7, false);
-        startExerciseTimer(30000);
+  @Override
+  public void onClick(View view) {
+    Button clickedButton = (Button) view;
+    Bundle bundle;
+    if (clickedButton.getText().equals(Preferences.SYMBOLS[1])) {
+      Intent intent = new Intent(this, InfoActivity_Level_1.class);
+      bundle = new Bundle();
+      bundle.putBoolean(Preferences.LEVEL_DONE, true);
+      bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
+      bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[2]);
+      stopExerciseTimer();
+
+      int timePassedFromLastExercise = getIntent()
+          .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
+          .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
+
+      timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
+      bundle.putInt(Preferences.TIME_PASSED, timePassed);
+      intent.putExtra(Preferences.BUNDLE, bundle);
+      startActivity(intent);
+    } else {
+      bundle = new Bundle();
+      bundle.putInt(Preferences.LEVEL, 1);
+      bundle.putInt(Preferences.EXERCISE, 1);
+      bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[0]);
+      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
+      failed(clickedButton, bundle);
     }
-
-    @Override
-    public void onClick(View view) {
-        Button clickedButton = (Button) view;
-        Bundle bundle;
-        if (clickedButton.getText().equals(Preferences.SYMBOLS[1])) {
-            Intent intent = new Intent(this, InfoActivity_Level_1.class);
-            bundle = new Bundle();
-            bundle.putBoolean(Preferences.GRATULATION, true);
-            bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-            bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[2]);
-            stopExerciseTimer();
-
-            int timePassedFromLastExercise = getIntent()
-                    .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
-                    .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
-
-            timePassed = (int) (exerciseTimer.timePassed()/1000 + timePassedFromLastExercise);
-            bundle.putInt(Preferences.TIME_PASSED, timePassed);
-            intent.putExtra(Preferences.BUNDLE, bundle);
-            startActivity(intent);
-        } else
-        {
-            bundle = new Bundle();
-            bundle.putInt(Preferences.LEVEL, 1);
-            bundle.putInt(Preferences.EXERCISE, 1);
-            bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[0]);
-            bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
-            failed(clickedButton, bundle);
-        }
-    }
+  }
 }

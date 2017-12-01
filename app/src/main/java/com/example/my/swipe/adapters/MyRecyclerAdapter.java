@@ -9,12 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.my.swipe.R;
 import com.example.my.swipe.model.LevelModel;
 import com.example.my.swipe.utils.Preferences;
-
 import java.util.List;
 
 /**
@@ -31,84 +28,79 @@ import java.util.List;
  */
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder> {
 
-    private List<LevelModel> list;
-    private Context context;
+  private List<LevelModel> list;
+  private Context context;
 
-    public MyRecyclerAdapter(Context context, List<LevelModel> list) {
-        this.list = list;
-        this.context = context;
-    }
+  public MyRecyclerAdapter(Context context, List<LevelModel> list) {
+    this.list = list;
+    this.context = context;
+  }
+
+  /**
+   * am metodshi iqmneba, layout, anu inflate(recycler_item_view),
+   * da es sheqmnili objekti unda gadavcet viewholders
+   */
+  @Override
+  public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    View view = LayoutInflater.from(parent.getContext())
+        .inflate(R.layout.recycler_item_view, parent, false);
+    MyViewHolder myViewHolder = new MyViewHolder(view); //dagavecit itemView
+    return myViewHolder; //dababruneb ViewHolder
+  }
+
+  /**
+   * am metodshi vigeb onCreateViewHolder/dan dabrunebul
+   * ViewHolders.  Da vaxden ViewHolderis memberebis initialisatias
+   */
+  @Override
+  public void onBindViewHolder(MyViewHolder holder, int position) {
+    holder.levelNameTextView.setText(list.get(position).getLevelName());
+    holder.imageView.setImageResource(list.get(position).getImage());
+    holder.levelBrainsTextView.setText("" + list.get(position).getBrains());
+
+  }
+
+  @Override
+  public int getItemCount() {
+    return list.size();
+  }
+
+  class MyViewHolder extends RecyclerView.ViewHolder implements
+      View.OnClickListener {
+
+    TextView levelNameTextView;
+    ImageView imageView;
+    TextView levelBrainsTextView;
 
     /**
-     *am metodshi iqmneba, layout, anu inflate(recycler_item_view),
-     * da es sheqmnili objekti unda gadavcet viewholders
-     * @param parent
-     * @param viewType
-     * @return
+     * ViewHolders aucilebelia rom hqondes Konstruktori,
+     * Konstruktorshi xdeba view-ebis amogeba anu ViewHolders gadmoecema itemView
+     * itemView aris layout titoeuli elementis da aq xdeba objeqtis anu
+     * itemviews gadmocema
      */
-    @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_view, parent, false);
-        MyViewHolder myViewHolder = new MyViewHolder(view); //dagavecit itemView
-        return myViewHolder; //dababruneb ViewHolder
-    }
+    public MyViewHolder(View itemView) {
+      super(itemView);
 
-    /**
-     * am metodshi vigeb onCreateViewHolder/dan dabrunebul
-     * ViewHolders.  Da vaxden ViewHolderis memberebis initialisatias
-     * @param holder
-     * @param position
-     */
-    @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.levelNameTextView.setText(list.get(position).getLevelName());
-        holder.imageView.setImageResource(list.get(position).getImage());
-        holder.levelBrainsTextView.setText("" + list.get(position).getBrains());
+      levelNameTextView = (TextView) itemView.findViewById(R.id.level_name);
+      imageView = (ImageView) itemView.findViewById(R.id.level_icon);
+      levelBrainsTextView = (TextView) itemView.findViewById(R.id.level_brain_counter);
+      itemView.setOnClickListener(this);
+
 
     }
 
     @Override
-    public int getItemCount() {
-        return list.size();
+    public void onClick(View view) {
+      int fragmentPosition = getAdapterPosition();
+      Intent intent = new Intent(context,
+          Preferences.INFO_ACTIVITIES[fragmentPosition]);
+      Bundle defaultBundle = new Bundle();
+      defaultBundle.putInt(Preferences.LEVEL,
+          Preferences.LEVEL_COUNTER + fragmentPosition);
+      defaultBundle.putInt(Preferences.EXERCISE,
+          Preferences.EXERCISE_COUNTER);
+      intent.putExtra(Preferences.BUNDLE, defaultBundle);
+      context.startActivity(intent);
     }
-
-    class MyViewHolder extends RecyclerView.ViewHolder implements
-    View.OnClickListener{
-
-        TextView levelNameTextView;
-        ImageView imageView;
-        TextView levelBrainsTextView;
-
-        /**
-         * ViewHolders aucilebelia rom hqondes Konstruktori,
-         * Konstruktorshi xdeba view-ebis amogeba anu ViewHolders gadmoecema itemView
-         * itemView aris layout titoeuli elementis da aq xdeba objeqtis anu
-         * itemviews gadmocema
-         * @param itemView
-         */
-        public  MyViewHolder(View itemView) {
-            super(itemView);
-
-            levelNameTextView = (TextView) itemView.findViewById(R.id.level_name);
-            imageView = (ImageView) itemView.findViewById(R.id.level_icon);
-            levelBrainsTextView = (TextView) itemView.findViewById(R.id.level_brain_counter);
-            itemView.setOnClickListener(this);
-
-
-        }
-
-        @Override
-        public void onClick(View view) {
-            int fragmentPosition = getAdapterPosition();
-            Intent intent = new Intent(context,
-                    Preferences.INFO_ACTIVITIES[fragmentPosition]);
-            Bundle defaultBundle = new Bundle();
-            defaultBundle.putInt(Preferences.LEVEL,
-                    Preferences.LEVEL_COUNTER + fragmentPosition);
-            defaultBundle.putInt(Preferences.EXERCISE,
-                    Preferences.EXERCISE_COUNTER);
-            intent.putExtra(Preferences.BUNDLE, defaultBundle);
-            context.startActivity(intent);
-        }
-    }
+  }
 }

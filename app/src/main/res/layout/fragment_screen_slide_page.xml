@@ -1,71 +1,71 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/content"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/activity_color">
+  android:id="@+id/content"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/activity_color">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/activity_vertical_margin">
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/total_mind_number"
-            android:text="0 von X "
-            android:textSize="@dimen/brain_counter_dimen"
-            android:textColor="@color/text_color"
-            />
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="4dp"
-            android:src="@mipmap/enabled_mind"
-            />
-
-    </LinearLayout>
+    <TextView
+      android:id="@+id/total_mind_number"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="0 von X "
+      android:textColor="@color/text_color"
+      android:textSize="@dimen/brain_counter_dimen"
+      />
 
     <ImageView
-        android:layout_width="@dimen/image_width"
-        android:layout_height="@dimen/image_height"
-        android:id="@+id/display_image_view"
-        android:layout_centerInParent="true"
-        />
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_marginTop="4dp"
+      android:src="@mipmap/enabled_mind"
+      />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_below="@+id/display_image_view"
-        android:layout_centerInParent="true">
+  </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mind1"
-            android:src="@mipmap/disabled_mind"/>
+  <ImageView
+    android:id="@+id/display_image_view"
+    android:layout_width="@dimen/image_width"
+    android:layout_height="@dimen/image_height"
+    android:layout_centerInParent="true"
+    />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mind2"
-            android:src="@mipmap/disabled_mind"/>
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_below="@+id/display_image_view"
+    android:layout_centerInParent="true"
+    android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mind3"
-            android:src="@mipmap/disabled_mind"/>
+    <ImageView
+      android:id="@+id/mind1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@mipmap/disabled_mind"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/mind4"
-            android:src="@mipmap/disabled_mind"/>
-    </LinearLayout>
+    <ImageView
+      android:id="@+id/mind2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@mipmap/disabled_mind"/>
+
+    <ImageView
+      android:id="@+id/mind3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@mipmap/disabled_mind"/>
+
+    <ImageView
+      android:id="@+id/mind4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@mipmap/disabled_mind"/>
+  </LinearLayout>
 </RelativeLayout>

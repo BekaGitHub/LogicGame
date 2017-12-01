@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.my.swipe">
+  package="com.example.my.swipe">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity android:name=".MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activities.ScreenSlidePagerActivity" />
-        <activity android:name=".TestActivity" />
-        <activity android:name=".activities.level_1.Level_1a_Activity" />
-        <activity android:name=".activities.level_1.Level_1b_Activity" />
-        <activity android:name=".activities.level_1.Level_1_BaseActivity" />
-        <activity android:name=".activities.level_1.InfoActivity_Level_1" />
-        <activity android:name=".activities.level_1.Level_1c_Activity" />
-        <activity android:name=".activities.level_1.Level_1d_Activity" />
-        <activity android:name=".activities.level_2.InfoActivity_Level_2" />
-        <activity android:name=".activities.level_2.Level_2a_Activity" />
-        <activity android:name=".activities.level_2.Level_2b_Activity" />
-        <activity android:name=".activities.level_2.Level_2c_Activity" />
-        <activity android:name=".activities.LevelDoneActivity" />
-        <activity android:name=".activities.level_3.InfoActivity_Level_3" />
-        <activity android:name=".activities.level_3.Level_3a_Activity" />
-        <activity android:name=".activities.level_3.Level_3b_Activity" />
-        <activity android:name=".activities.level_3.Level_3c_Activity" />
-        <activity android:name=".activities.level_4.InfoActivity_Level_4" />
-        <activity android:name=".activities.level_4.Level_4a_Activity" />
-        <activity android:name=".activities.level_4.Level_4b_Activity" />
-        <activity android:name=".activities.level_4.Level_4c_Activity" />
-        <activity android:name=".activities.level_4.Level_4d_Activity" />
-        <activity android:name=".activities.level_5.InfoActivity_Level_5" />
-        <activity android:name=".activities.level_5.Level_5a_Activity"></activity>
-    </application>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".activities.ScreenSlidePagerActivity"/>
+    <activity android:name=".TestActivity"/>
+    <activity android:name=".activities.level_1.Level_1a_Activity"/>
+    <activity android:name=".activities.level_1.Level_1b_Activity"/>
+    <activity android:name=".activities.level_1.Level_1_BaseActivity"/>
+    <activity android:name=".activities.level_1.InfoActivity_Level_1"/>
+    <activity android:name=".activities.level_1.Level_1c_Activity"/>
+    <activity android:name=".activities.level_1.Level_1d_Activity"/>
+    <activity android:name=".activities.level_2.InfoActivity_Level_2"/>
+    <activity android:name=".activities.level_2.Level_2a_Activity"/>
+    <activity android:name=".activities.level_2.Level_2b_Activity"/>
+    <activity android:name=".activities.level_2.Level_2c_Activity"/>
+    <activity android:name=".activities.LevelDoneActivity"/>
+    <activity android:name=".activities.level_3.InfoActivity_Level_3"/>
+    <activity android:name=".activities.level_3.Level_3a_Activity"/>
+    <activity android:name=".activities.level_3.Level_3b_Activity"/>
+    <activity android:name=".activities.level_3.Level_3c_Activity"/>
+    <activity android:name=".activities.level_4.InfoActivity_Level_4"/>
+    <activity android:name=".activities.level_4.Level_4a_Activity"/>
+    <activity android:name=".activities.level_4.Level_4b_Activity"/>
+    <activity android:name=".activities.level_4.Level_4c_Activity"/>
+    <activity android:name=".activities.level_4.Level_4d_Activity"/>
+    <activity android:name=".activities.level_5.InfoActivity_Level_5"/>
+    <activity android:name=".activities.level_5.Level_5a_Activity"></activity>
+  </application>
 
 </manifest>

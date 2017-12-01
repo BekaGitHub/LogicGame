@@ -4,33 +4,33 @@ package com.example.my.swipe.model;
  * Created by EmpaT on 26.11.2017.
  */
 
-public class LevelModel
-{
-    private String levelName;
-    private int image;
-    private int brains;
+public class LevelModel {
 
-    public String getLevelName() {
-        return levelName;
-    }
+  private String levelName;
+  private int image;
+  private int brains;
 
-    public void setLevelName(String levelName) {
-        this.levelName = levelName;
-    }
+  public String getLevelName() {
+    return levelName;
+  }
 
-    public int getImage() {
-        return image;
-    }
+  public void setLevelName(String levelName) {
+    this.levelName = levelName;
+  }
 
-    public void setImage(int image) {
-        this.image = image;
-    }
+  public int getImage() {
+    return image;
+  }
 
-    public int getBrains() {
-        return brains;
-    }
+  public void setImage(int image) {
+    this.image = image;
+  }
 
-    public void setBrains(int brains) {
-        this.brains = brains;
-    }
+  public int getBrains() {
+    return brains;
+  }
+
+  public void setBrains(int brains) {
+    this.brains = brains;
+  }
 }

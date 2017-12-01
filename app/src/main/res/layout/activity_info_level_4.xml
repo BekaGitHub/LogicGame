@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_level4__explanation"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/info_activity_level4"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/activity_color"
+  android:onClick="handleClick"
+  tools:context="com.example.my.swipe.activities.level_4.InfoActivity_Level_4">
+
+  <TextView
+    android:id="@+id/info_activity_level4_titel"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/activity_color"
-    tools:context="com.example.my.swipe.activities.level_4.InfoActivity_Level_4"
-    android:onClick="handleClick">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
+    android:text="@string/level_4_titel"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/level_titel"/>
+
+  <TextView
+    android:id="@+id/info_activity_level4_level_counter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/level_counter_vertical_margin"
+    android:gravity="center"
+    android:text="@string/level_counter"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/level_counter"/>
+
+  <TextView
+    android:id="@+id/info_activity_level4_exercise_counter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/exercise_counter_vertical_margin"
+    android:layout_below="@+id/info_activity_level4_level_counter"
+    android:gravity="center"
+    android:text="@string/exercise_counter"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/exercise_counter"/>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/info_activity_level4_exercise_counter"
+    android:gravity="center"
+    android:orientation="horizontal"
+    >
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/titel_level4"
-        android:text="@string/level_4_titel"
-        android:textSize="@dimen/level_titel"
-        android:textColor="@color/text_color"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"/>
+      android:id="@+id/exercise_level4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/activity_vertical_margin"
+      android:text="@string/find_smile"
+      android:textColor="@color/text_color"
+      android:textSize="@dimen/level_counter"
+      />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/level_counter_level4"
-        android:text="@string/level_counter"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/level_counter"
-        android:gravity="center"
-        android:layout_marginTop="@dimen/level_counter_vertical_margin"/>
+    <ImageView
+      android:id="@+id/smile_image_view"
+      android:layout_width="20dp"
+      android:layout_height="20dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/exercise_counter_level4"
-        android:layout_below="@+id/level_counter_level4"
-        android:layout_marginTop="@dimen/exercise_counter_vertical_margin"
-        android:text="@string/exercise_counter"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/exercise_counter"
-        android:gravity="center"/>
+  </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/exercise_counter_level4"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/exercise_level4"
-                android:text="@string/find_smile"
-                android:textColor="@color/text_color"
-                android:textSize="@dimen/level_counter"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:id="@+id/smile_image_view"/>
-
-        </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/start_game"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:text="@string/start_game"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/exercise_counter"
-        android:layout_marginBottom="@dimen/activity_horizontal_margin"
-        />
+  <TextView
+    android:id="@+id/start_game"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+    android:layout_alignParentBottom="true"
+    android:gravity="center"
+    android:text="@string/start_game"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/exercise_counter"
+    />
 </RelativeLayout>

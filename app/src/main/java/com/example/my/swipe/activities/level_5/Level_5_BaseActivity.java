@@ -5,17 +5,16 @@ import android.view.View;
 import com.example.my.swipe.activities.BaseActivity;
 
 public abstract class Level_5_BaseActivity extends BaseActivity
-        implements View.OnClickListener{
+    implements View.OnClickListener {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+  }
 
-    @Override
-    public Class getLevelInfoClass()
-    {
-        return InfoActivity_Level_5.class;
-    }
+  @Override
+  public Class getLevelInfoClass() {
+    return InfoActivity_Level_5.class;
+  }
 
 }

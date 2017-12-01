@@ -8,21 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import com.example.my.swipe.R;
 import com.example.my.swipe.MainActivity;
-import com.example.my.swipe.utils.Preferences;
+import com.example.my.swipe.R;
 import com.example.my.swipe.utils.ExerciseTimer;
+import com.example.my.swipe.utils.Preferences;
 
 /**
  * Created by EmpaT on 03.11.2017.
  */
 
-public class DialogBack extends DialogFragment {
+public class BackDialog extends DialogFragment {
 
     private ExerciseTimer exerciseTimer;
 
-    public DialogBack() {
+    public BackDialog() {
 
     }
 
@@ -43,7 +42,8 @@ public class DialogBack extends DialogFragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         View dialogView = View.inflate(getActivity(), R.layout.dialog_layout, container);
 
@@ -66,6 +66,6 @@ public class DialogBack extends DialogFragment {
                 startActivity(intent);
             }
         });
-        return  dialogView;
+        return dialogView;
     }
 }

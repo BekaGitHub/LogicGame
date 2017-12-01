@@ -1,15 +1,15 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="level_counter_vertical_margin">120dp</dimen>
-    <dimen name="game_name">30sp</dimen>
-    <dimen name="hello_text">15sp</dimen>
-    <dimen name="level_titel">25sp</dimen>
-    <dimen name="level_counter">20sp</dimen>
-    <dimen name="exercise_counter">15sp</dimen>
-    <dimen name="image_width">350dp</dimen>
-    <dimen name="image_height">450dp</dimen>
-    <dimen name="brain_counter_dimen">25sp</dimen>
-    <dimen name="exercise_counter_vertical_margin">120dp</dimen>
+  <!-- Default screen margins, per the Android Design guidelines. -->
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+  <dimen name="level_counter_vertical_margin">120dp</dimen>
+  <dimen name="game_name">30sp</dimen>
+  <dimen name="hello_text">15sp</dimen>
+  <dimen name="level_titel">25sp</dimen>
+  <dimen name="level_counter">20sp</dimen>
+  <dimen name="exercise_counter">15sp</dimen>
+  <dimen name="image_width">350dp</dimen>
+  <dimen name="image_height">450dp</dimen>
+  <dimen name="brain_counter_dimen">25sp</dimen>
+  <dimen name="exercise_counter_vertical_margin">120dp</dimen>
 </resources>

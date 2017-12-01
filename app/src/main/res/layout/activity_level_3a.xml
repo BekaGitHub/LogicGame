@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_level_3a_"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_level_3a_"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/activity_color"
+  tools:context="com.example.my.swipe.activities.level_3.Level_3a_Activity">
+
+  <TextView
+    android:id="@+id/timer_text_view_3a"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_centerHorizontal="true"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textColor="@color/text_color"
+    android:textSize="25sp"
+    />
+
+  <TextView
+    android:id="@+id/exercise_info_level3"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/activity_color"
-    tools:context="com.example.my.swipe.activities.level_3.Level_3a_Activity">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_vertical_margin"
+    android:layout_below="@+id/timer_text_view_3a"
+    android:text="@string/common_figures_easy"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/level_counter"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timer_text_view_3a"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="3dp"
-        android:textColor="@color/text_color"
-        android:textSize="25sp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        />
+  <ImageView
+    android:layout_width="@dimen/image_width"
+    android:layout_height="@dimen/image_height"
+    android:layout_centerInParent="true"
+    android:src="@drawable/level_3a"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/exercise_info_level3"
-        android:textSize="@dimen/level_counter"
-        android:textColor="@color/text_color"
-        android:layout_below="@+id/timer_text_view_3a"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:text="@string/common_figures_easy"/>
+  <ImageView
+    android:id="@+id/failed_image_3a"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_centerInParent="true"/>
 
-    <ImageView
-        android:layout_width="@dimen/image_width"
-        android:layout_height="@dimen/image_height"
-        android:layout_centerInParent="true"
-        android:src="@drawable/level_3a"/>
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerInParent="true"
+    android:orientation="horizontal">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/failed_image_3a"
-        android:layout_centerInParent="true"/>
+    <Button
+      android:id="@+id/button_color_level_3a"
+      android:layout_width="130dp"
+      android:layout_height="70dp"
+      android:layout_margin="5dp"
+      android:text="@string/color"
+      android:textSize="@dimen/level_counter"
+      />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal">
+    <Button
+      android:id="@+id/button_form_level_3a"
+      android:layout_width="130dp"
+      android:layout_height="70dp"
+      android:layout_margin="5dp"
+      android:text="@string/form"
+      android:textSize="@dimen/level_counter"
+      />
 
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="70dp"
-            android:id="@+id/button_color_level_3a"
-            android:layout_margin="5dp"
-            android:text="@string/color"
-            android:textSize="@dimen/level_counter"
-            />
-
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="70dp"
-            android:id="@+id/button_form_level_3a"
-            android:layout_margin="5dp"
-            android:text="@string/form"
-            android:textSize="@dimen/level_counter"
-            />
-
-    </LinearLayout>
+  </LinearLayout>
 
 </RelativeLayout>
