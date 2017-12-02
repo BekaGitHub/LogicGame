@@ -10,7 +10,10 @@ import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
+
 import com.example.my.swipe.adapters.MyRecyclerAdapter;
+import com.example.my.swipe.fragments.BackDialog;
 import com.example.my.swipe.model.LevelModel;
 import com.example.my.swipe.utils.Preferences;
 import java.util.ArrayList;
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    TextView totalBrainsTextView = (TextView) findViewById(R.id.total_brains);
 
     coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
     final CollapsingToolbarLayout col = (CollapsingToolbarLayout) findViewById(
@@ -50,18 +55,36 @@ public class MainActivity extends AppCompatActivity {
 
     List<LevelModel> levelModels = new ArrayList<>();
 
+    int brains = Preferences.TOTAL_BRAINS;
     for (int i = 0; i < Preferences.LEVEL_NAMES.length; i++) {
       LevelModel levelModel = new LevelModel();
       levelModel.setLevelName(getString(Preferences.LEVEL_NAMES[i]));
       levelModel.setImage(Preferences.LEVEL_ICONS[i]);
-      levelModel.setBrains(i);
+
+      if(brains / 4 > 0) {
+        levelModel.setBrains(4);
+        brains -= 4;
+      }
+      else if (brains != 0){
+        levelModel.setBrains(brains % 4);
+        brains = 0;
+
+      }
 
       levelModels.add(levelModel);
     }
 
+    String totalBrains = getString(R.string.total_brains, "" + Preferences.TOTAL_BRAINS);
+    totalBrainsTextView.setText(totalBrains);
+
     MyRecyclerAdapter adapter = new MyRecyclerAdapter(this, levelModels);
     recyclerView.setAdapter(adapter);
 
+  }
+
+  @Override
+  public void onBackPressed() {
+    moveTaskToBack(true);
   }
 
 }

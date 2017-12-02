@@ -56,7 +56,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
   public void onBindViewHolder(MyViewHolder holder, int position) {
     holder.levelNameTextView.setText(list.get(position).getLevelName());
     holder.imageView.setImageResource(list.get(position).getImage());
-    holder.levelBrainsTextView.setText("" + list.get(position).getBrains());
+
+    int brais = list.get(position).getBrains();
+    String text = context.getString(R.string.level_brains, "" + brais);
+    holder.levelBrainsTextView.setText(text);
 
   }
 
@@ -91,12 +94,12 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     @Override
     public void onClick(View view) {
-      int fragmentPosition = getAdapterPosition();
+      int itemPosition = getAdapterPosition();
       Intent intent = new Intent(context,
-          Preferences.INFO_ACTIVITIES[fragmentPosition]);
+          Preferences.INFO_ACTIVITIES[itemPosition]);
       Bundle defaultBundle = new Bundle();
       defaultBundle.putInt(Preferences.LEVEL,
-          Preferences.LEVEL_COUNTER + fragmentPosition);
+          1 + itemPosition);
       defaultBundle.putInt(Preferences.EXERCISE,
           Preferences.EXERCISE_COUNTER);
       intent.putExtra(Preferences.BUNDLE, defaultBundle);

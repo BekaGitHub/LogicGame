@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.my.swipe.R;
+import com.example.my.swipe.fragments.BackDialog;
 import com.example.my.swipe.utils.Preferences;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,4 +79,10 @@ public class LevelDoneActivity extends AppCompatActivity {
     intent.putExtra(Preferences.BUNDLE, bundle);
     startActivity(intent);
   }
+
+  @Override
+    public void onBackPressed() {
+        BackDialog dialog = new BackDialog();
+        dialog.show(getFragmentManager(), "DialogTag");
+    }
 }

@@ -34,7 +34,6 @@ public class Preferences {
   public static final String FIGURE_2 = "figure2";
 
   public static final String PREFS = "preference";
-  public static final String PREF_MIND_NUMBER_LEVEL_1 = "prefMindNumberLevel1";
   public static final String TIME_PASSED = "timePassed";
   public static final String TIME_PASSED_FROM_LAST_EXERCISE =
       "timePassedFromLastExercise";
@@ -58,6 +57,7 @@ public class Preferences {
   public static final String BUNDLE = "bundle";
   public static final String BUNDLE_FROM_INFO_ACTIVITY =
       "bundleFromInfoActivity";
+
   public static final String EXERCISE_INFO = "exerciseExplanation";
   public static final int[] COLOR_NAMES = {R.string.red, R.string.green,
       R.string.black, R.string.yellow,
@@ -86,8 +86,7 @@ public class Preferences {
   public static final int LEVEL_5_TOTAL_TIME_IN_SECONDS = 25;
   public static final String NEXT_LEVEL = "nextLevel";
 
-  public static int TOTAL_MIND_NUMBER = 10;
-  public static int LEVEL_1_MIND_NUMBER = 0;
+  public static int TOTAL_BRAINS = 10;
   public static int LEVEL_TIME_SPENT = 0;
   public static int LEVEL_COUNTER = 1;
   public static int EXERCISE_COUNTER = 1;

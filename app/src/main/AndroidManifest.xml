@@ -15,8 +15,7 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <activity android:name=".activities.ScreenSlidePagerActivity"/>
-    <activity android:name=".TestActivity"/>
+      <activity android:name=".TestActivity"/>
     <activity android:name=".activities.level_1.Level_1a_Activity"/>
     <activity android:name=".activities.level_1.Level_1b_Activity"/>
     <activity android:name=".activities.level_1.Level_1_BaseActivity"/>

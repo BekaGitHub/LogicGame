@@ -89,6 +89,7 @@
       android:orientation="horizontal">
 
       <TextView
+        android:id="@+id/total_brains"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/total_brains"

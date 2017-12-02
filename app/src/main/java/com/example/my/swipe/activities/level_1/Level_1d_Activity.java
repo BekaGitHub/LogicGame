@@ -53,7 +53,7 @@ public class Level_1d_Activity extends Level_1_BaseActivity implements View.OnCl
 
       timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
 
-      int points = Evaluator.evaluate(Preferences.LEVEL_1_TOTAL_TIME_IN_SECONDS, timePassed);
+      int points = Evaluator.evaluate(Preferences.LEVEL_1_EXERCISE_TIME_IN_SECONDS, timePassed);
       bundle.putInt(Preferences.LEVEL_POINT, points);
       bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_2.class);
       intent.putExtra(Preferences.BUNDLE, bundle);

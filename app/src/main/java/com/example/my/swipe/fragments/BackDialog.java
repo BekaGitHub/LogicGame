@@ -53,7 +53,9 @@ public class BackDialog extends DialogFragment {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                exerciseTimer.resume();
+                if (exerciseTimer != null) {
+                    exerciseTimer.resume();
+                }
                 dismiss();
             }
         });

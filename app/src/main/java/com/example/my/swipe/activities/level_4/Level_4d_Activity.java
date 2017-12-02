@@ -51,7 +51,7 @@ public class Level_4d_Activity extends Level_4_BaseActivity {
           .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
 
       timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
-      int points = Evaluator.evaluate(Preferences.LEVEL_4_TOTAL_TIME_IN_SECONDS, timePassed);
+      int points = Evaluator.evaluate(Preferences.LEVEL_4_EXERCISE_TIME_IN_SECONDS, timePassed);
       bundle.putInt(Preferences.LEVEL_POINT, points);
       bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_5.class);
       intent.putExtra(Preferences.BUNDLE, bundle);
