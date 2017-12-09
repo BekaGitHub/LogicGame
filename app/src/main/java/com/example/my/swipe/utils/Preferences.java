@@ -7,6 +7,7 @@ import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
 import com.example.my.swipe.activities.level_3.InfoActivity_Level_3;
 import com.example.my.swipe.activities.level_4.InfoActivity_Level_4;
 import com.example.my.swipe.activities.level_5.InfoActivity_Level_5;
+import com.example.my.swipe.activities.level_6.InfoActivity_Level_6;
 
 /**
  * Created by EmpaT on 02.11.2017.
@@ -33,17 +34,17 @@ public class Preferences {
   public static final String FIGURE_1 = "figure1";
   public static final String FIGURE_2 = "figure2";
 
-  public static final String PREFS = "preference";
   public static final String TIME_PASSED = "timePassed";
   public static final String TIME_PASSED_FROM_LAST_EXERCISE =
       "timePassedFromLastExercise";
   public static final String[] SYMBOLS = {"+", ":)", "<", "u", "d", "d", "ds", "sd"};
   public static final int[] LEVEL_NAMES = {R.string.level_1_titel,
       R.string.level_2_titel, R.string.level_3_titel,
-      R.string.level_4_titel, R.string.level_5_titel};
+      R.string.level_4_titel, R.string.level_5_titel, R.string.level_5_titel};
   public static final int[] LEVEL_ICONS = {R.drawable.level_1_icon,
       R.drawable.level_2_icon, R.drawable.level_3_icon,
-      R.drawable.level_4_icon, R.drawable.level_5_icon
+      R.drawable.level_4_icon, R.drawable.level_5_icon,
+      R.drawable.level_6_icon
 
   };
   public static final Class[] INFO_ACTIVITIES = {
@@ -51,7 +52,8 @@ public class Preferences {
       InfoActivity_Level_2.class,
       InfoActivity_Level_3.class,
       InfoActivity_Level_4.class,
-      InfoActivity_Level_5.class
+      InfoActivity_Level_5.class,
+      InfoActivity_Level_6.class
   };
   public static final String CLASS = "class";
   public static final String BUNDLE = "bundle";
@@ -91,4 +93,28 @@ public class Preferences {
   public static int LEVEL_COUNTER = 1;
   public static int EXERCISE_COUNTER = 1;
 
+
+  public static final String POINTS_PREF = "pointsPreference";
+  public static final String LEVEL_1_POINTS = "level_1_Points";
+  public static final String LEVEL_2_POINTS = "level_2_Points";
+  public static final String LEVEL_3_POINTS = "level_3_Points";
+  public static final String LEVEL_4_POINTS = "level_4_Points";
+  public static final String LEVEL_5_POINTS = "level_5_Points";
+  public static final String LEVEL_6_POINTS = "level_6_Points";
+  public static final String LEVEL_7_POINTS = "level_7_Points";
+  public static final String LEVEL_8_POINTS = "level_8_Points";
+  public static final String LEVEL_9_POINTS = "level_9_Points";
+  public static final String LEVEL_10_POINTS = "level_10_Points";
+  public static final String LEVEL_11_POINTS = "level_11_Points";
+  public static final String LEVEL_12_POINTS = "level_12_Points";
+  public static final String LEVEL_13_POINTS = "level_13_Points";
+  public static final String LEVEL_14_POINTS = "level_14_Points";
+  public static final String LEVEL_15_POINTS = "level_15_Points";
+  public static final String LEVEL_16_POINTS = "level_16_Points";
+  public static final String LEVEL_17_POINTS = "level_17_Points";
+  public static final String LEVEL_18_POINTS = "level_18_Points";
+  public static final String LEVEL_19_POINTS = "level_19_Points";
+  public static final String LEVEL_20_POINTS = "level_20_Points";
+  public static final String LEVEL_21_POINTS = "level_21_Points";
+  public static final String LEVEL_22_POINTS = "level_22_Points";
 }

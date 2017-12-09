@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.LevelDoneActivity;
 import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
+import com.example.my.swipe.activities.level_6.InfoActivity_Level_6;
 import com.example.my.swipe.utils.Evaluator;
 import com.example.my.swipe.utils.Preferences;
 import com.example.my.swipe.utils.Util;
@@ -27,7 +28,7 @@ public class Level_5a_Activity extends Level_5_BaseActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     //Nummer des aktuellen Level
-    Preferences.LEVEL_COUNTER = 1;
+    Preferences.LEVEL_COUNTER = 5;
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_level_5a);
 
@@ -89,9 +90,10 @@ public class Level_5a_Activity extends Level_5_BaseActivity {
     } else {
       timePassed = (int) (exerciseTimer.timePassed() / 1000);
       int points = Evaluator.evaluate(Preferences.LEVEL_5_TOTAL_TIME_IN_SECONDS, timePassed);
+      savePonts(Preferences.LEVEL_5_POINTS, points);
       bundle.putInt(Preferences.LEVEL_POINT, points);
       Intent intent = new Intent(this, LevelDoneActivity.class);
-      bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_1.class);
+      bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_6.class);
       intent.putExtra(Preferences.BUNDLE, bundle);
       startActivity(intent);
     }

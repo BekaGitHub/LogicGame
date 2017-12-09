@@ -60,11 +60,4 @@ public class Level_1a_Activity extends Level_1_BaseActivity {
       failed(clickedButton, bundle);
     }
   }
-
-  private void saveMindNumber(int number) {
-    SharedPreferences.Editor editor =
-        getSharedPreferences(Preferences.PREFS, MODE_PRIVATE).edit();
-    editor.putInt("name", 4);
-    editor.apply();
-  }
 }

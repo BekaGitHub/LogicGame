@@ -49,7 +49,7 @@ public class Util {
       return Color.BLACK;
     } else if (colorName.equals(res.getString(R.string.yellow))) {
       return Color.YELLOW;
-    } else if (colorName.equals(res.getString(R.string.black))) {
+    } else if (colorName.equals(res.getString(R.string.blue))) {
       return Color.BLUE;
     } else if (colorName.equals(res.getString(R.string.magenta))) {
       return Color.MAGENTA;

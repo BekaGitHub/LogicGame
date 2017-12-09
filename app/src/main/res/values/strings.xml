@@ -16,6 +16,7 @@
   <string name="linke_vs_rechte">ტვინის მარცხენა ნახევარსფერო კითხულობს ტექსტს, ხოლო
     მარჯვენა ნახევარსფერო აღიქვამს ფერებს. <b>დააკვირდი ტექსტის ფერს</b>. პასუხი
     სწორია მხოლოდ მაშინ, როდესაც ტექსტის ფერი და ფერის სახელი ერთმანეთს ემთხვევა</string>
+  <string name="linke_vs_rechte_2">აირჩიე სწორი პასუხი</string>
   <string name="find_smile">იპოვე სმაილი: </string>
   <string name="start_game">თამაშის დასაწყებად დააკლიკე ეკრანს</string>
   <string name="exercise_done">გილოცავ, შენ წარმატებით დაძლიე დავალება</string>
@@ -58,6 +59,9 @@
   <string name="yellow">ყვითელი</string>
   <string name="blue">ლურჯი</string>
   <string name="magenta">მაგენტა</string>
+  <string name="find">იპოვე</string>
+  <string name="figur">ფიგურა</string>
+  <string name="string_placeholder">%1$s</string>
 
   <string name="wallapop">M874.323897,513.518484 C860.358769,445.332884 816.382769,412.921263
     805.267282,406.191832 C800.657846,403.400084 797.676103,399.358653 797.88841,392.435874

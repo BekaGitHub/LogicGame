@@ -37,7 +37,9 @@
     <activity android:name=".activities.level_4.Level_4c_Activity"/>
     <activity android:name=".activities.level_4.Level_4d_Activity"/>
     <activity android:name=".activities.level_5.InfoActivity_Level_5"/>
-    <activity android:name=".activities.level_5.Level_5a_Activity"></activity>
+    <activity android:name=".activities.level_5.Level_5a_Activity"/>
+    <activity android:name=".activities.level_6.InfoActivity_Level_6"/>
+    <activity android:name=".activities.level_6.Level_6_Activity"/>
   </application>
 
 </manifest>

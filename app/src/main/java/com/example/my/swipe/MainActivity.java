@@ -1,5 +1,6 @@
 package com.example.my.swipe;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     Palette.from(headerBitmap).generate(new Palette.PaletteAsyncListener() {
       @Override
       public void onGenerated(Palette palette) {
-        col.setContentScrimColor(palette.getDominantColor(1));
+        col.setContentScrimColor(palette.getMutedColor(1));
       }
     });
 
@@ -55,36 +56,39 @@ public class MainActivity extends AppCompatActivity {
 
     List<LevelModel> levelModels = new ArrayList<>();
 
-    int brains = Preferences.TOTAL_BRAINS;
+    int totalPoints = 0;
     for (int i = 0; i < Preferences.LEVEL_NAMES.length; i++) {
       LevelModel levelModel = new LevelModel();
       levelModel.setLevelName(getString(Preferences.LEVEL_NAMES[i]));
       levelModel.setImage(Preferences.LEVEL_ICONS[i]);
-
-      if(brains / 4 > 0) {
-        levelModel.setBrains(4);
-        brains -= 4;
-      }
-      else if (brains != 0){
-        levelModel.setBrains(brains % 4);
-        brains = 0;
-
+      //level_x_Points
+      String pointKey = "level_" + (i+1) + "_Points";
+      int levelPoint = getPoints(pointKey);
+      if (levelPoint != -1) {
+        levelModel.setBrains(levelPoint);
+        totalPoints += levelPoint;
       }
 
       levelModels.add(levelModel);
     }
 
-    String totalBrains = getString(R.string.total_brains, "" + Preferences.TOTAL_BRAINS);
+    String totalBrains = getString(R.string.total_brains, "" + totalPoints);
     totalBrainsTextView.setText(totalBrains);
 
     MyRecyclerAdapter adapter = new MyRecyclerAdapter(this, levelModels);
     recyclerView.setAdapter(adapter);
-
   }
 
   @Override
   public void onBackPressed() {
     moveTaskToBack(true);
+  }
+
+  //Pointebis chawera xdeba levelis bolo davalebashi
+  private int getPoints(String level) {
+    SharedPreferences pointsPref = getSharedPreferences(Preferences.POINTS_PREF, MODE_PRIVATE);
+    int point = pointsPref.getInt(level, -1);
+    return point;
   }
 
 }

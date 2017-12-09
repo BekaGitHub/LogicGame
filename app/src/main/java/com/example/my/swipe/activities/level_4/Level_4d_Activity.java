@@ -52,6 +52,7 @@ public class Level_4d_Activity extends Level_4_BaseActivity {
 
       timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
       int points = Evaluator.evaluate(Preferences.LEVEL_4_EXERCISE_TIME_IN_SECONDS, timePassed);
+      savePonts(Preferences.LEVEL_4_POINTS, points);
       bundle.putInt(Preferences.LEVEL_POINT, points);
       bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_5.class);
       intent.putExtra(Preferences.BUNDLE, bundle);
@@ -65,12 +66,5 @@ public class Level_4d_Activity extends Level_4_BaseActivity {
 
       failed(clickedButton, bundle);
     }
-  }
-
-  private void saveMindNumber(int number) {
-    SharedPreferences.Editor editor =
-        getSharedPreferences(Preferences.PREFS, MODE_PRIVATE).edit();
-    editor.putInt("name", 4);
-    editor.apply();
   }
 }

@@ -75,6 +75,7 @@ public class Level_2c_Activity extends Level_2_BaseActivity {
       timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
 
       int points = Evaluator.evaluate(Preferences.LEVEL_2_EXERCISE_TIME_IN_SECONDS, timePassed);
+      savePonts(Preferences.LEVEL_2_POINTS, points);
       bundle.putInt(Preferences.LEVEL_POINT, points);
       bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_3.class);
       intent.putExtra(Preferences.BUNDLE, bundle);

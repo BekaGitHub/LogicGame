@@ -1,5 +1,6 @@
 package com.example.my.swipe.activities;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -71,6 +72,21 @@ public abstract class BaseActivity extends AppCompatActivity {
     exerciseTimer.cancel();
   }
 
+  public void savePonts(String key, int value) {
+    SharedPreferences pointsPref = getSharedPreferences(Preferences.POINTS_PREF, MODE_PRIVATE);
+    SharedPreferences.Editor editor = pointsPref.edit();
+    //chaiwere qula mxolod mashin, tu aktualuri qula metia
+    //wina cdaze dagrovil qulaze an key ar arsebobs, anu qula
+    //konkretuli levelistvis jer ar chawerila
+    int pointsFromLastTry = pointsPref.getInt(key, -1);
+    if(pointsFromLastTry == -1 || pointsFromLastTry < value) {
+      editor.putInt(key, value);
+      editor.commit();
+    }
+
+    editor.putInt(key, value);
+
+  }
 
   public abstract Class getLevelInfoClass();
 }
