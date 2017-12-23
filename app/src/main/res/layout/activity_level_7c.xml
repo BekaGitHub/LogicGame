@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_level_7c"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/activity_color"
+  tools:context="com.example.my.swipe.activities.level_1.Level_1a_Activity">
+
+  <TextView
+    android:id="@+id/timer_text_view_7c"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_centerHorizontal="true"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textColor="@color/text_color"
+    android:textSize="25sp"
+    />
+
+  <ImageView
+    android:id="@+id/failed_image_7c"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_centerInParent="true"/>
+
+  <ImageView
+      android:id="@+id/exercise_image_level_7c"
+      android:layout_width="400dp"
+      android:layout_height="400dp"
+      android:layout_centerInParent="true"/>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_centerInParent="true"
+      android:gravity="center">
+    <Button
+        android:id="@+id/button_with_12_level7c"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="12"
+        android:textSize="45sp"/>
+    <Button
+        android:id="@+id/button_with_15_level7c"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="15"
+        android:textSize="45sp"/>
+    <Button
+        android:id="@+id/button_with_8_level7c"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="8"
+        android:textSize="45sp"/>
+    <Button
+        android:id="@+id/button_with_9_level7c"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="9"
+        android:textSize="45sp"/>
+  </LinearLayout>
+
+</RelativeLayout>

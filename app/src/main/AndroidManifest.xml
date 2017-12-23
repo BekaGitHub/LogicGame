@@ -40,6 +40,11 @@
     <activity android:name=".activities.level_5.Level_5a_Activity"/>
     <activity android:name=".activities.level_6.InfoActivity_Level_6"/>
     <activity android:name=".activities.level_6.Level_6_Activity"/>
+    <activity android:name=".activities.level_7.InfoActivity_Level_7"/>
+    <activity android:name=".activities.level_7.Level_7a_Activity"/>
+    <activity android:name=".activities.level_7.Level_7b_Activity"/>
+    <activity android:name=".activities.level_7.Level_7c_Activity"/>
+    <activity android:name=".activities.level_7.Level_7j_Activity"/>
   </application>
 
 </manifest>
