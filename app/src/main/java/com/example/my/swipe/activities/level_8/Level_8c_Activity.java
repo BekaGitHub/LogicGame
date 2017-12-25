@@ -37,14 +37,9 @@ public class Level_8c_Activity extends Level_8_BaseActivity {
   @Override
   public void onClick(View view) {
     Button clickedButton = (Button) view;
-    Bundle bundle;
+    Bundle bundle = new Bundle();
     if (clickedButton.getText().equals("1")) {
-      Intent intent = new Intent(this, Level_8b_Activity.class);
-      bundle = new Bundle();
-      bundle.putBoolean(Preferences.LEVEL_DONE, true);
-      bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-      bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_3_beschreibung));
-      bundle.putInt(Preferences.IMAGE, R.drawable.or_gate);
+      Intent intent = new Intent(this, Level_8d_Activity.class);
       stopExerciseTimer();
 
       int timePassedFromLastExercise = getIntent()
@@ -52,11 +47,10 @@ public class Level_8c_Activity extends Level_8_BaseActivity {
               .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
 
       timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
-      bundle.putInt(Preferences.TIME_PASSED, timePassed);
+      bundle.putInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, timePassed);
       intent.putExtra(Preferences.BUNDLE, bundle);
       startActivity(intent);
     } else {
-      bundle = new Bundle();
       bundle.putInt(Preferences.LEVEL, 8);
       bundle.putInt(Preferences.EXERCISE, 1);
       bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_1_beschreibung));

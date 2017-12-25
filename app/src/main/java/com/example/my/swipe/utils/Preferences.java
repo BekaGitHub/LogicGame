@@ -109,6 +109,13 @@ public class Preferences {
   public static final int LEVEL_8a_EXERCISE_TIME_IN_SECONDS = 45;
   public static final int LEVEL_8b_EXERCISE_TIME_IN_SECONDS = 45;
   public static final int LEVEL_8c_EXERCISE_TIME_IN_SECONDS = 45;
+  public static final int LEVEL_8d_EXERCISE_TIME_IN_SECONDS = 120;
+  public static final int LEVEL_8_TOTAL_TIME_IN_SECONDS =
+          LEVEL_8a_EXERCISE_TIME_IN_SECONDS +
+                  LEVEL_8b_EXERCISE_TIME_IN_SECONDS +
+                  LEVEL_8c_EXERCISE_TIME_IN_SECONDS +
+                  LEVEL_8d_EXERCISE_TIME_IN_SECONDS;
+
 
   public static int TOTAL_BRAINS = 10;
   public static int LEVEL_TIME_SPENT = 0;

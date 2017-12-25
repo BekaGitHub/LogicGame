@@ -78,7 +78,7 @@ public class Level_7j_Activity extends Level_7_BaseActivity {
       int points = Evaluator.evaluate(Preferences.LEVEL_7_TOTAL_TIME_IN_SECONDS, timePassed);
       savePonts(Preferences.LEVEL_7_POINTS, points);
       bundle.putInt(Preferences.LEVEL_POINT, points);
-      bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_8.class); //Shecvale momdevno levelis infoActivitit
+      bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_8.class);
       intent.putExtra(Preferences.BUNDLE, bundle);
       startActivity(intent);
     } else
