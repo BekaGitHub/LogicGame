@@ -1,6 +1,7 @@
 package com.example.my.swipe.activities;
 
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.my.swipe.R;
 import com.example.my.swipe.fragments.BackDialog;
@@ -14,6 +15,7 @@ public class InfoBaseActivity extends AppCompatActivity {
   protected TextView levelCounterTextView;
   protected TextView exerciseCounterTextView;
   protected TextView exerciseExplanationTextView;
+  protected ImageView imageViewFuerInfo;
 
   protected int exerciseIndex;
   protected int levelIndex;

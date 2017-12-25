@@ -13,6 +13,7 @@
   <string name="level_4_titel">იპოვე სმაილი</string>
   <string name="level_5_titel">მარცხენა vs მარჯვენა</string>
   <string name="level_7_titel">კრიპტოგრამა</string>
+  <string name="level_8_titel">ლოგიკური ჩამკეტები</string>
   <string name="find_symbol">იპოვე სიმბოლო: %1$s</string>
   <string name="linke_vs_rechte">ტვინის მარცხენა ნახევარსფერო კითხულობს ტექსტს, ხოლო
     მარჯვენა ნახევარსფერო აღიქვამს ფერებს. <b>დააკვირდი ტექსტის ფერს</b>. პასუხი
@@ -20,6 +21,14 @@
   <string name="linke_vs_rechte_2">აირჩიე სწორი პასუხი</string>
   <string name="cryptogram_exercise_explanation">სიმბოლოს რა მნიშვნელობა განაპირობებს გამოსახულების სისწორეს</string>
   <string name="find_smile">იპოვე სმაილი: </string>
+  <string name="logische_schaltungen_aufgabe_1_beschreibung">ფოტოზე ნაჩვენებ ჩამკეტს ეწოდება ინვერტერი.
+    ინვერტერი გარდაქმნის მაღალ ძაბვას (1) დაბალ ძაბვად (0) და პირიქით.</string>
+  <string name="logische_schaltungen_aufgabe_2_beschreibung">ფოტოზე ნაჩვენებ ჩამკეტს ეწოდება \"და ჩამკეტი\".
+    \"და ჩამკეტი\"_ს რეზულტატი (გამოსავალი) არის 1, მხოლოდ მაშინ, როდესაც ორივე შესავალი ერთის ტოლია,
+    სხვა შემთხვევაში რეზულტატი (გამოსავალი) არის ნულის ტოლი</string>
+  <string name="logische_schaltungen_aufgabe_3_beschreibung">ფოტოზე ნაჩვენებ ჩამკეტს ეწოდება \"ან ჩამკეტი\".
+    \"ან ჩამკეტი\"_ს რეზულტატი (გამოსავალი) არის 1, მხოლოდ მაშინ, როდესაც ერთ-ერთი შესავალი ერთის ტოლია,
+    სხვა შემთხვევაში რეზულტატი (გამოსავალი) არის ნულის ტოლი</string>
   <string name="start_game">თამაშის დასაწყებად დააკლიკე ეკრანს</string>
   <string name="exercise_done">გილოცავ, შენ წარმატებით დაძლიე დავალება</string>
   <string name="level_done">გილოცავ</string>
@@ -247,6 +256,7 @@ C273.832,988.707,68.5809,783.455,68.5809,530.265
 C68.5809,277.075,273.832,71.8233,527.023,71.8233 Z
   </string>
   <string name="next">შემდეგი</string>
+  <string name="schema_resultat">რა არის სქემის რესულტატი</string>
   <integer name="circle_original_width">1062</integer>
   <integer name="circle_original_height">1062</integer>
 

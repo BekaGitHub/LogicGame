@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/info_activity_level7"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/activity_color"
+  android:onClick="handleClick"
+  tools:context="com.example.my.swipe.activities.level_1.InfoActivity_Level_1">
+
+  <TextView
+    android:id="@+id/info_activity_level1_tite8"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
+    android:text="@string/level_8_titel"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/level_titel"/>
+
+  <TextView
+    android:id="@+id/info_activity_level8_level_counter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="70dp"
+    android:gravity="center"
+    android:text="@string/level_counter"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/level_counter"/>
+
+  <TextView
+    android:id="@+id/info_activity_level8_exercise_counter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:layout_below="@+id/info_activity_level8_level_counter"
+    android:gravity="center"
+    android:text="@string/exercise_counter"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/exercise_counter"/>
+
+  <TextView
+    android:id="@+id/info_activity_level8_exercise_explanation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_vertical_margin"
+    android:layout_below="@+id/info_activity_level8_exercise_counter"
+    android:gravity="center"
+    android:text="@string/logische_schaltungen_aufgabe_1_beschreibung"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/level_counter"
+    />
+
+  <ImageView
+      android:layout_width="400dp"
+      android:layout_height="400dp"
+      android:id="@+id/logische_schaltung_image_view_info_activity_8"
+      android:layout_below="@+id/info_activity_level8_exercise_explanation"
+      android:layout_centerInParent="true"
+      android:src="@drawable/inverter"
+      />
+
+  <TextView
+    android:id="@+id/start_game"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+    android:layout_alignParentBottom="true"
+    android:gravity="center"
+    android:text="@string/start_game"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/exercise_counter"
+    />
+</RelativeLayout>

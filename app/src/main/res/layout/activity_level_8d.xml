@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_level_8d"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/activity_color"
+  tools:context="com.example.my.swipe.activities.level_1.Level_1a_Activity">
+
+  <TextView
+    android:id="@+id/timer_text_view_8d"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_centerHorizontal="true"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textColor="@color/text_color"
+    android:textSize="25sp"
+    />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/resultat_text_view_8d"
+      android:text="@string/schema_resultat"
+      android:textColor="@color/text_color"
+      android:textSize="20sp"
+      android:layout_marginTop="20dp"
+      android:layout_below="@+id/timer_text_view_8d"
+      android:layout_centerInParent="true"/>
+
+  <ImageView
+    android:id="@+id/failed_image_8d"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_centerInParent="true"/>
+  
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="600dp"
+      android:layout_below="@+id/resultat_text_view_8d"
+      android:src="@drawable/aufgabe_8d"/>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:gravity="center">
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:id="@+id/button_0_8d"
+        android:text="0"
+        android:textSize="50sp"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:id="@+id/button_1_8d"
+        android:text="1"
+        android:textSize="50sp"/>
+
+  </LinearLayout>
+
+
+
+</RelativeLayout>

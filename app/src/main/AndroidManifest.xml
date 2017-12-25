@@ -7,7 +7,9 @@
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
     android:supportsRtl="true"
-    android:theme="@style/AppTheme">
+    android:theme="@style/AppTheme"
+    android:hardwareAccelerated="false"
+    android:largeHeap="true">
     <activity android:name=".MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
@@ -45,6 +47,11 @@
     <activity android:name=".activities.level_7.Level_7b_Activity"/>
     <activity android:name=".activities.level_7.Level_7c_Activity"/>
     <activity android:name=".activities.level_7.Level_7j_Activity"/>
+    <activity android:name=".activities.level_8.InfoActivity_Level_8"/>
+    <activity android:name=".activities.level_8.Level_8a_Activity"/>
+    <activity android:name=".activities.level_8.Level_8b_Activity"/>
+    <activity android:name=".activities.level_8.Level_8c_Activity"/>
+    <activity android:name=".activities.level_8.Level_8d_Activity"/>
   </application>
 
 </manifest>

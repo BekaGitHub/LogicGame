@@ -9,6 +9,7 @@ import com.example.my.swipe.activities.level_4.InfoActivity_Level_4;
 import com.example.my.swipe.activities.level_5.InfoActivity_Level_5;
 import com.example.my.swipe.activities.level_6.InfoActivity_Level_6;
 import com.example.my.swipe.activities.level_7.InfoActivity_Level_7;
+import com.example.my.swipe.activities.level_8.InfoActivity_Level_8;
 
 /**
  * Created by EmpaT on 02.11.2017.
@@ -24,6 +25,8 @@ public class Preferences {
   public static final String FROM = "from";
   public static final String LEVEL = "level";
   public static final String ETAGE = "etage";
+  public static final String AUFGABE_BESCHREIBUNG = "aufgabeBeschreibung";
+  public static final String IMAGE = "image";
 
   public static final String ERSTE = "erste";
   public static final String ZWEITE = "zweite";
@@ -42,7 +45,7 @@ public class Preferences {
   public static final int[] LEVEL_NAMES = {R.string.level_1_titel,
       R.string.level_2_titel, R.string.level_3_titel,
       R.string.level_4_titel, R.string.level_5_titel, R.string.level_5_titel,
-      R.string.level_7_titel};
+      R.string.level_7_titel, R.string.level_8_titel};
   public static final int[] LEVEL_ICONS = {R.drawable.level_1_icon,
       R.drawable.level_2_icon, R.drawable.level_3_icon,
       R.drawable.level_4_icon, R.drawable.level_5_icon,
@@ -57,7 +60,8 @@ public class Preferences {
       InfoActivity_Level_4.class,
       InfoActivity_Level_5.class,
       InfoActivity_Level_6.class,
-      InfoActivity_Level_7.class
+      InfoActivity_Level_7.class,
+      InfoActivity_Level_8.class
   };
   public static final String CLASS = "class";
   public static final String BUNDLE = "bundle";
@@ -101,6 +105,10 @@ public class Preferences {
           LEVEL_7b_EXERCISE_TIME_IN_SECONDS +
           LEVEL_7c_EXERCISE_TIME_IN_SECONDS +
           LEVEL_7j_EXERCISE_TIME_IN_SECONDS;
+
+  public static final int LEVEL_8a_EXERCISE_TIME_IN_SECONDS = 45;
+  public static final int LEVEL_8b_EXERCISE_TIME_IN_SECONDS = 45;
+  public static final int LEVEL_8c_EXERCISE_TIME_IN_SECONDS = 45;
 
   public static int TOTAL_BRAINS = 10;
   public static int LEVEL_TIME_SPENT = 0;
