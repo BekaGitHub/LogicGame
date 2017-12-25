@@ -37,7 +37,7 @@
   
   <ImageView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_height="600dp"
       android:layout_below="@+id/resultat_text_view_8a"
       android:src="@drawable/aufgabe_8a"/>
 
