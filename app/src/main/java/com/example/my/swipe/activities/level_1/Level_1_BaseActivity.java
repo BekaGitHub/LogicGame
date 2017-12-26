@@ -1,5 +1,6 @@
 package com.example.my.swipe.activities.level_1;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -14,8 +15,13 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.BaseActivity;
+import com.example.my.swipe.activities.LevelDoneActivity;
+import com.example.my.swipe.activities.level_2.InfoActivity_Level_2;
 import com.example.my.swipe.style.MyBounceInterpolator;
 import com.example.my.swipe.style.SquareButton;
+import com.example.my.swipe.utils.Evaluator;
+import com.example.my.swipe.utils.Preferences;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -121,6 +127,74 @@ public abstract class Level_1_BaseActivity extends BaseActivity
       i++;
     }
   }
+
+  protected void handleButtonClick(Button clickedButton, int symbolIndex)
+  {
+    Bundle bundle = new Bundle();
+    if (clickedButton.getText().equals(Preferences.SYMBOLS[symbolIndex]))
+    {
+      if (symbolIndex != Preferences.SYMBOLS.length - 1) //Wenn symbolIndex, kein index vom letzten Symbol ist
+      {
+        startInfoActivity(symbolIndex, bundle);
+      }else
+      {
+        startLevelDoneActivity(bundle);
+      }
+    } else
+    {
+      bundle.putInt(Preferences.LEVEL, 1);
+      bundle.putInt(Preferences.EXERCISE, 1);
+      bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[0]);
+      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
+      failed(clickedButton, bundle);
+    }
+  }
+
+  private void startInfoActivity(int symbolIndex, Bundle bundle)
+  {
+    int timePassedFromLastExercise = 0;
+    Intent intent = new Intent(this, InfoActivity_Level_1.class);
+    bundle.putBoolean(Preferences.LEVEL_DONE, true);
+    bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
+    bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[1]);
+    stopExerciseTimer();
+
+    if (getIntent().getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY) != null)
+    {
+      timePassedFromLastExercise = getIntent()
+              .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
+              .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
+    }
+
+    timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
+    bundle.putInt(Preferences.TIME_PASSED, timePassed);
+    intent.putExtra(Preferences.BUNDLE, bundle);
+    startActivity(intent);
+  }
+
+  private void startLevelDoneActivity(Bundle bundle)
+  {
+    int timePassedFromLastExercise = 0;
+    Intent intent = new Intent(this, LevelDoneActivity.class);
+    stopExerciseTimer();
+
+    if (getIntent().getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY) != null)
+    {
+      timePassedFromLastExercise = getIntent()
+              .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
+              .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
+    }
+
+    timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
+    int points = Evaluator.evaluate(Preferences.LEVEL_1_EXERCISE_TIME_IN_SECONDS, timePassed);
+    savePonts(Preferences.LEVEL_1_POINTS, points);
+    bundle.putInt(Preferences.LEVEL_POINT, points);
+    bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_2.class);
+    intent.putExtra(Preferences.BUNDLE, bundle);
+    startActivity(intent);
+  }
+
+
 
   @Override
   public Class getLevelInfoClass() {

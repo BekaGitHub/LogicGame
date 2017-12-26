@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     setSupportActionBar(toolbar);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-    Bitmap headerBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.haus);
+    Bitmap headerBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.level_4_icon);
 
     Palette.from(headerBitmap).generate(new Palette.PaletteAsyncListener() {
       @Override
