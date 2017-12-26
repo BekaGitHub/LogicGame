@@ -42,30 +42,6 @@ public class Level_1d_Activity extends Level_1_BaseActivity implements View.OnCl
   @Override
   public void onClick(View view) {
     Button clickedButton = (Button) view;
-    Bundle bundle;
-    if (clickedButton.getText().equals(Preferences.SYMBOLS[3])) {
-      Intent intent = new Intent(this, LevelDoneActivity.class);
-      bundle = new Bundle();
-      stopExerciseTimer();
-      int timePassedFromLastExercise = getIntent()
-          .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
-          .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
-
-      timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
-
-      int points = Evaluator.evaluate(Preferences.LEVEL_1_EXERCISE_TIME_IN_SECONDS, timePassed);
-      savePonts(Preferences.LEVEL_1_POINTS, points);
-      bundle.putInt(Preferences.LEVEL_POINT, points);
-      bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_2.class);
-      intent.putExtra(Preferences.BUNDLE, bundle);
-      startActivity(intent);
-    } else {
-      bundle = new Bundle();
-      bundle.putInt(Preferences.LEVEL, 1);
-      bundle.putInt(Preferences.EXERCISE, 1);
-      bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[0]);
-      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
-      failed(clickedButton, bundle);
-    }
+    handleButtonClick(clickedButton, 3);
   }
 }

@@ -41,7 +41,7 @@ public class Preferences {
   public static final String TIME_PASSED = "timePassed";
   public static final String TIME_PASSED_FROM_LAST_EXERCISE =
       "timePassedFromLastExercise";
-  public static final String[] SYMBOLS = {"+", ":)", "<", "u", "d", "d", "ds", "sd"};
+  public static final String[] SYMBOLS = {"+", ":)", "<", "u"};
   public static final int[] LEVEL_NAMES = {R.string.level_1_titel,
       R.string.level_2_titel, R.string.level_3_titel,
       R.string.level_4_titel, R.string.level_5_titel, R.string.level_5_titel,
