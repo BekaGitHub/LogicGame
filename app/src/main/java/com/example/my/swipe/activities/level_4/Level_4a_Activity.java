@@ -35,28 +35,6 @@ public class Level_4a_Activity extends Level_4_BaseActivity {
 
   @Override
   public void onClick(View view) {
-    SquareButton clickedButton = (SquareButton) view;
-    Bundle bundle;
-    if (clickedButton.getBackgroundID() == Integer.parseInt(targetSymbol)) {
-      Intent intent = new Intent(this, InfoActivity_Level_4.class);
-      bundle = new Bundle();
-      bundle.putBoolean(Preferences.EXERCISE_DONE, true);
-      bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-      bundle.putInt(Preferences.SMILE, R.drawable.sad_emoji);
-
-      stopExerciseTimer();
-      timePassed = (int) (exerciseTimer.timePassed() / 1000);
-      bundle.putInt(Preferences.TIME_PASSED, timePassed);
-      intent.putExtra(Preferences.BUNDLE, bundle);
-      startActivity(intent);
-    } else {
-      bundle = new Bundle();
-      bundle.putInt(Preferences.LEVEL, 4);
-      bundle.putInt(Preferences.EXERCISE, 1);
-      bundle.putInt(Preferences.SMILE, R.drawable.smile_emoji);
-      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
-
-      failed(clickedButton, bundle);
-    }
+    handleClickedButton((SquareButton)view, targetSymbol, R.drawable.sad_emoji, false);
   }
 }
