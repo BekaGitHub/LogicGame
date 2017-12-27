@@ -25,7 +25,7 @@ public class InfoActivity_Level_3 extends InfoBaseActivity {
 
     levelIndex = bundle.getInt(Preferences.LEVEL, 3);
     exerciseIndex = bundle.getInt(Preferences.EXERCISE, 1);
-    isLevelDone = bundle.getBoolean(Preferences.LEVEL_DONE, false);
+    isLevelDone = bundle.getBoolean(Preferences.EXERCISE_DONE, false);
 
     //aq gavcherdi 19.11.2017
     int figure1 = bundle.getInt(Preferences.FIGURE_1, R.string.first);

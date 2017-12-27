@@ -41,7 +41,7 @@ public class Level_8b_Activity extends Level_8_BaseActivity {
     if (clickedButton.getText().equals("0")) {
       Intent intent = new Intent(this, InfoActivity_Level_8.class);
       bundle = new Bundle();
-      bundle.putBoolean(Preferences.LEVEL_DONE, true);
+      bundle.putBoolean(Preferences.EXERCISE_DONE, true);
       bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
       bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_3_beschreibung));
       bundle.putInt(Preferences.IMAGE, R.drawable.or_gate);

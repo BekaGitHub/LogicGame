@@ -1,7 +1,6 @@
 package com.example.my.swipe.activities.level_4;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -41,7 +40,7 @@ public class Level_4b_Activity extends Level_4_BaseActivity {
     if (clickedButton.getBackgroundID() == Integer.parseInt(targetSymbol)) {
       Intent intent = new Intent(this, InfoActivity_Level_4.class);
       bundle = new Bundle();
-      bundle.putBoolean(Preferences.LEVEL_DONE, true);
+      bundle.putBoolean(Preferences.EXERCISE_DONE, true);
       bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
       bundle.putInt(Preferences.SMILE, R.drawable.neut_emoji);
       stopExerciseTimer();

@@ -52,7 +52,7 @@ public class Level_3a_Activity extends Level_3_BaseActivity {
     } else {
       Intent intent = new Intent(this, InfoActivity_Level_3.class);
       bundle = new Bundle();
-      bundle.putBoolean(Preferences.LEVEL_DONE, true);
+      bundle.putBoolean(Preferences.EXERCISE_DONE, true);
       bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
       bundle.putInt(Preferences.FIGURE_1, R.string.third);
       bundle.putInt(Preferences.FIGURE_2, R.string.fifth);

@@ -28,7 +28,7 @@ public class InfoActivity_Level_4 extends InfoBaseActivity {
     levelIndex = bundle.getInt(Preferences.LEVEL, 4);
     exerciseIndex = bundle.getInt(Preferences.EXERCISE, 1);
     int smile = bundle.getInt(Preferences.SMILE, R.drawable.smile_emoji);
-    isLevelDone = bundle.getBoolean(Preferences.LEVEL_DONE, false);
+    isLevelDone = bundle.getBoolean(Preferences.EXERCISE_DONE, false);
 
     setInfoText();
 

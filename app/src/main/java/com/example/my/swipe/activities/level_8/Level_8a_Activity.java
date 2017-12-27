@@ -5,12 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.example.my.swipe.R;
-import com.example.my.swipe.activities.level_1.InfoActivity_Level_1;
-import com.example.my.swipe.activities.level_1.Level_1_BaseActivity;
 import com.example.my.swipe.utils.Preferences;
 
 public class Level_8a_Activity extends Level_8_BaseActivity {
@@ -44,7 +41,7 @@ public class Level_8a_Activity extends Level_8_BaseActivity {
     if (clickedButton.getText().equals("0")) {
       Intent intent = new Intent(this, InfoActivity_Level_8.class);
       bundle = new Bundle();
-      bundle.putBoolean(Preferences.LEVEL_DONE, true);
+      bundle.putBoolean(Preferences.EXERCISE_DONE, true);
       bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
       bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_2_beschreibung));
       bundle.putInt(Preferences.IMAGE, R.drawable.and_gate);

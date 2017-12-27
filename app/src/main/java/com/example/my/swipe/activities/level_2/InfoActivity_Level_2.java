@@ -27,7 +27,7 @@ public class InfoActivity_Level_2 extends InfoBaseActivity {
     levelIndex = bundle.getInt(Preferences.LEVEL, 2);
     exerciseIndex = bundle.getInt(Preferences.EXERCISE, 1);
     String etage = bundle.getString(Preferences.ETAGE, getString(R.string.second));
-    isLevelDone = bundle.getBoolean(Preferences.LEVEL_DONE, false);
+    isLevelDone = bundle.getBoolean(Preferences.EXERCISE_DONE, false);
 
     setInfoText();
 

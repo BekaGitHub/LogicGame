@@ -49,33 +49,6 @@ public class Level_2b_Activity extends Level_2_BaseActivity {
 
   @Override
   public void onClick(View view) {
-    Bundle bundle;
-    if (view.getId() == button1.getId() ||
-        view.getId() == button2.getId() ||
-        view.getId() == button3.getId()) {
-      bundle = new Bundle();
-      bundle.putInt(Preferences.LEVEL, 2);
-      bundle.putInt(Preferences.EXERCISE, 1);
-      bundle.putString(Preferences.ETAGE, getString(R.string.second));
-      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
-
-      failed((Button) view, bundle);
-    } else {
-      Intent intent = new Intent(this, InfoActivity_Level_2.class);
-      bundle = new Bundle();
-      bundle.putBoolean(Preferences.LEVEL_DONE, true);
-      bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-      bundle.putString(Preferences.ETAGE, getString(R.string.third));
-      stopExerciseTimer();
-
-      int timePassedFromLastExercise = getIntent()
-          .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
-          .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
-
-      timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
-      bundle.putInt(Preferences.TIME_PASSED, timePassed);
-      intent.putExtra(Preferences.BUNDLE, bundle);
-      startActivity(intent);
-    }
+    handleClickedButton((Button)view, button4.getId(), R.string.second, false);
   }
 }

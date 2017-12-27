@@ -26,7 +26,7 @@ public class InfoActivity_Level_1 extends InfoBaseActivity {
     levelIndex = bundle.getInt(Preferences.LEVEL, 1);
     exerciseIndex = bundle.getInt(Preferences.EXERCISE, 1);
     String symbol = bundle.getString(Preferences.SYMBOL, "+");
-    isLevelDone = bundle.getBoolean(Preferences.LEVEL_DONE, false);
+    isLevelDone = bundle.getBoolean(Preferences.EXERCISE_DONE, false);
     setInfoText();
 
     String exerciseCounterText = getString(R.string.exercise_counter, "" + exerciseIndex, "4");

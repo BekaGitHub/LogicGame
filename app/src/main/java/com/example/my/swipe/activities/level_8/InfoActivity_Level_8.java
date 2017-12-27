@@ -8,9 +8,6 @@ import android.widget.TextView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.InfoBaseActivity;
-import com.example.my.swipe.activities.level_1.Level_1a_Activity;
-import com.example.my.swipe.activities.level_1.Level_1b_Activity;
-import com.example.my.swipe.activities.level_1.Level_1c_Activity;
 import com.example.my.swipe.activities.level_1.Level_1d_Activity;
 import com.example.my.swipe.utils.Preferences;
 
@@ -34,7 +31,7 @@ public class InfoActivity_Level_8 extends InfoBaseActivity {
     exerciseIndex = bundle.getInt(Preferences.EXERCISE, 1);
     String aufgabeBeschreibung = bundle.getString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_1_beschreibung));
     int image = bundle.getInt(Preferences.IMAGE, R.drawable.inverter);
-    isLevelDone = bundle.getBoolean(Preferences.LEVEL_DONE, false);
+    isLevelDone = bundle.getBoolean(Preferences.EXERCISE_DONE, false);
     setInfoText();
 
     String exerciseCounterText = getString(R.string.exercise_counter, "" + exerciseIndex, "4");

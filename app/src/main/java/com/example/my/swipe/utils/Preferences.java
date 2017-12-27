@@ -18,7 +18,7 @@ import com.example.my.swipe.activities.level_8.InfoActivity_Level_8;
 public class Preferences {
 
   public static final String POSITION = "position";
-  public static final String LEVEL_DONE = "levelDone";
+  public static final String EXERCISE_DONE = "levelDone";
   public static final String EXERCISE = "exerciseExplanationTextView";
   public static final String SYMBOL = "symbol";
   public static final String SMILE = "smile";
