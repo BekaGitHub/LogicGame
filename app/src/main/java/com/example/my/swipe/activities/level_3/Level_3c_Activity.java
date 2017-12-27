@@ -46,34 +46,6 @@ public class Level_3c_Activity extends Level_3_BaseActivity {
 
   @Override
   public void onClick(View view) {
-    Bundle bundle;
-    if (view.getId() == formButton.getId() ||
-        view.getId() == colorButton.getId()) {
-      bundle = new Bundle();
-      bundle.putInt(Preferences.LEVEL, 3);
-      bundle.putInt(Preferences.EXERCISE, 1);
-      bundle.putInt(Preferences.FIGURE_1, R.string.first);
-      bundle.putInt(Preferences.FIGURE_2, R.string.second);
-      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
-
-      failed((Button) view, bundle);
-    } else {
-      Intent intent = new Intent(this, LevelDoneActivity.class);
-      bundle = new Bundle();
-      stopExerciseTimer();
-
-      int timePassedFromLastExercise = getIntent()
-          .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
-          .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
-
-      timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
-
-      int points = Evaluator.evaluate(Preferences.LEVEL_3_EXERCISE_TIME_IN_SECONDS, timePassed);
-      savePonts(Preferences.LEVEL_3_POINTS, points);
-      bundle.putInt(Preferences.LEVEL_POINT, points);
-      bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_4.class);
-      intent.putExtra(Preferences.BUNDLE, bundle);
-      startActivity(intent);
-    }
+    handleClicledButton((Button)view, bothButton.getId(), -1, -1, true);
   }
 }
