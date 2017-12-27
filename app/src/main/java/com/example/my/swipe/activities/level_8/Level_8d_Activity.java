@@ -38,31 +38,6 @@ public class Level_8d_Activity extends Level_8_BaseActivity {
 
   @Override
   public void onClick(View view) {
-    Button clickedButton = (Button) view;
-    Bundle bundle = new Bundle();
-    if (clickedButton.getText().equals("0")) {
-      Intent intent = new Intent(this, LevelDoneActivity.class);
-      stopExerciseTimer();
-
-      int timePassedFromLastExercise = getIntent()
-              .getBundleExtra(Preferences.BUNDLE)
-              .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
-
-      timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
-      int points = Evaluator.evaluate(Preferences.LEVEL_8_TOTAL_TIME_IN_SECONDS, timePassed);
-      savePonts(Preferences.LEVEL_8_POINTS, points);
-      bundle.putInt(Preferences.LEVEL_POINT, points);
-      bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_8.class); //Shecvale momdevno levelis infoActivitit
-      intent.putExtra(Preferences.BUNDLE, bundle);
-      startActivity(intent);
-    } else {
-      bundle = new Bundle();
-      bundle.putInt(Preferences.LEVEL, 8);
-      bundle.putInt(Preferences.EXERCISE, 1);
-      bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_1_beschreibung));
-      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
-
-      failed(clickedButton, bundle);
-    }
+    handleClickedButton((Button)view, "0", -1, -1, true);
   }
 }

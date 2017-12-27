@@ -36,27 +36,6 @@ public class Level_8c_Activity extends Level_8_BaseActivity {
 
   @Override
   public void onClick(View view) {
-    Button clickedButton = (Button) view;
-    Bundle bundle = new Bundle();
-    if (clickedButton.getText().equals("1")) {
-      Intent intent = new Intent(this, Level_8d_Activity.class);
-      stopExerciseTimer();
-
-      int timePassedFromLastExercise = getIntent()
-              .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
-              .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
-
-      timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
-      bundle.putInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, timePassed);
-      intent.putExtra(Preferences.BUNDLE, bundle);
-      startActivity(intent);
-    } else {
-      bundle.putInt(Preferences.LEVEL, 8);
-      bundle.putInt(Preferences.EXERCISE, 1);
-      bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_1_beschreibung));
-      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
-
-      failed(clickedButton, bundle);
-    }
+    startNextActivity((Button)view, "1", Level_8d_Activity.class, false);
   }
 }

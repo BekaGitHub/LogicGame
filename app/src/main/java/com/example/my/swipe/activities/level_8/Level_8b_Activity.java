@@ -36,33 +36,8 @@ public class Level_8b_Activity extends Level_8_BaseActivity {
 
   @Override
   public void onClick(View view) {
-    Button clickedButton = (Button) view;
-    Bundle bundle;
-    if (clickedButton.getText().equals("0")) {
-      Intent intent = new Intent(this, InfoActivity_Level_8.class);
-      bundle = new Bundle();
-      bundle.putBoolean(Preferences.EXERCISE_DONE, true);
-      bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-      bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_3_beschreibung));
-      bundle.putInt(Preferences.IMAGE, R.drawable.or_gate);
-      stopExerciseTimer();
-
-      int timePassedFromLastExercise = getIntent()
-              .getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY)
-              .getInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE, 0);
-
-      timePassed = (int) (exerciseTimer.timePassed() / 1000 + timePassedFromLastExercise);
-      bundle.putInt(Preferences.TIME_PASSED, timePassed);
-      intent.putExtra(Preferences.BUNDLE, bundle);
-      startActivity(intent);
-    } else {
-      bundle = new Bundle();
-      bundle.putInt(Preferences.LEVEL, 8);
-      bundle.putInt(Preferences.EXERCISE, 1);
-      bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_1_beschreibung));
-      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
-
-      failed(clickedButton, bundle);
-    }
+    handleClickedButton((Button) view, "0",
+            R.string.logische_schaltungen_aufgabe_3_beschreibung,
+            R.drawable.or_gate, false);
   }
 }

@@ -36,30 +36,8 @@ public class Level_8a_Activity extends Level_8_BaseActivity {
 
   @Override
   public void onClick(View view) {
-    Button clickedButton = (Button) view;
-    Bundle bundle;
-    if (clickedButton.getText().equals("0")) {
-      Intent intent = new Intent(this, InfoActivity_Level_8.class);
-      bundle = new Bundle();
-      bundle.putBoolean(Preferences.EXERCISE_DONE, true);
-      bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-      bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_2_beschreibung));
-      bundle.putInt(Preferences.IMAGE, R.drawable.and_gate);
-
-      stopExerciseTimer();
-      timePassed = (int) (exerciseTimer.timePassed() / 1000);
-      bundle.putInt(Preferences.TIME_PASSED, timePassed);
-      intent.putExtra(Preferences.BUNDLE, bundle);
-      startActivity(intent);
-    } else {
-      bundle = new Bundle();
-      bundle.putInt(Preferences.LEVEL, 8);
-      bundle.putInt(Preferences.EXERCISE, 1);
-      bundle.putInt(Preferences.IMAGE, R.drawable.inverter);
-      bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_1_beschreibung));
-      bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
-
-      failed(clickedButton, bundle);
-    }
+    handleClickedButton((Button) view, "0",
+            R.string.logische_schaltungen_aufgabe_2_beschreibung,
+            R.drawable.and_gate, false);
   }
 }
