@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/activity_main"
+    android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="#7887AB"
@@ -13,7 +14,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="0dp"
+      android:layout_weight="1"
     tools:context="com.example.my.swipe.MainActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -50,12 +52,6 @@
         </android.support.v7.widget.Toolbar>
       </android.support.design.widget.CollapsingToolbarLayout>
 
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
-
-      </LinearLayout>
-
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
@@ -71,8 +67,6 @@
   <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:layout_below="@+id/coordinator_layout"
     >
 
     <ImageView
@@ -107,4 +101,4 @@
 
 
   </RelativeLayout>
-</RelativeLayout>
+</LinearLayout>
