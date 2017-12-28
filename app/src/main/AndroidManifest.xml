@@ -50,6 +50,7 @@
     <activity android:name=".activities.level_8.Level_8b_Activity"/>
     <activity android:name=".activities.level_8.Level_8c_Activity"/>
     <activity android:name=".activities.level_8.Level_8d_Activity"/>
+    <activity android:name=".activities.level_9.InfoActivity_Level_9"/>
   </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import com.example.my.swipe.R;
 import com.example.my.swipe.activities.BaseActivity;
 import com.example.my.swipe.activities.LevelDoneActivity;
 import com.example.my.swipe.activities.level_7.InfoActivity_Level_7;
+import com.example.my.swipe.activities.level_9.InfoActivity_Level_9;
 import com.example.my.swipe.utils.Evaluator;
 import com.example.my.swipe.utils.Preferences;
 
@@ -97,7 +98,7 @@ public abstract class Level_8_BaseActivity extends BaseActivity
     int points = Evaluator.evaluate(Preferences.LEVEL_8_TOTAL_TIME_IN_SECONDS, timePassed);
     savePonts(Preferences.LEVEL_8_POINTS, points);
     bundle.putInt(Preferences.LEVEL_POINT, points);
-    bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_8.class); //Shecvale momdevno levelis infoActivitit
+    bundle.putSerializable(Preferences.NEXT_LEVEL, InfoActivity_Level_9.class); //Shecvale momdevno levelis infoActivitit
     intent.putExtra(Preferences.BUNDLE, bundle);
     startActivity(intent);
   }

@@ -14,6 +14,7 @@
   <string name="level_5_titel">მარცხენა vs მარჯვენა</string>
   <string name="level_7_titel">კრიპტოგრამა</string>
   <string name="level_8_titel">ლოგიკური ჩამკეტები</string>
+  <string name="level_9_titel">დაალაგე რიცხვები</string>
   <string name="find_symbol">იპოვე სიმბოლო: %1$s</string>
   <string name="linke_vs_rechte">ტვინის მარცხენა ნახევარსფერო კითხულობს ტექსტს, ხოლო
     მარჯვენა ნახევარსფერო აღიქვამს ფერებს. <b>დააკვირდი ტექსტის ფერს</b>. პასუხი
@@ -58,6 +59,7 @@
   <string name="exercise_level_2c">%1$s ცხოვრობს %2$s ქვემოთ.
         %3$s ცხოვრობს %4$s ქვემოთ.
         %5$s ცხოვრობს %6$s ზემოთ. ვინ ცხოვრობს %7$s სართულზე</string>
+  <string name="exercise_level_9a">დაალაგე რიცხვები ერთიდან ოცამდე ზრდადობის მიხედვით</string>
 
   <string name="color">ფერი</string>
   <string name="form">ფორმა</string>

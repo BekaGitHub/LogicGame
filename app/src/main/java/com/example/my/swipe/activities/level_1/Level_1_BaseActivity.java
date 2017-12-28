@@ -156,7 +156,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     Intent intent = new Intent(this, InfoActivity_Level_1.class);
     bundle.putBoolean(Preferences.EXERCISE_DONE, true);
     bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-    bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[1]);
+    bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[symbolIndex + 1]);
     stopExerciseTimer();
 
     if (getIntent().getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY) != null)

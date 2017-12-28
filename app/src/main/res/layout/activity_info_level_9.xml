@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/info_activity_level9"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/activity_color"
+  android:onClick="handleClick"
+  tools:context="com.example.my.swipe.activities.level_4.InfoActivity_Level_4">
+
+  <TextView
+    android:id="@+id/info_activity_level9_titel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
+    android:text="@string/level_9_titel"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/level_titel"/>
+
+  <TextView
+    android:id="@+id/info_activity_level9_level_counter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/level_counter_vertical_margin"
+    android:gravity="center"
+    android:text="@string/level_counter"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/level_counter"/>
+
+  <TextView
+    android:id="@+id/info_activity_level9_exercise_counter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/exercise_counter_vertical_margin"
+    android:layout_below="@+id/info_activity_level9_level_counter"
+    android:gravity="center"
+    android:text="@string/exercise_counter"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/exercise_counter"/>
+
+    <TextView
+      android:id="@+id/exercise_level9"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/activity_vertical_margin"
+      android:text="@string/exercise_level_9a"
+      android:textColor="@color/text_color"
+      android:textSize="@dimen/level_counter"
+      android:layout_below="@+id/info_activity_level9_exercise_counter"
+      android:gravity="center"
+      />
+
+  <TextView
+    android:id="@+id/start_game"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+    android:layout_alignParentBottom="true"
+    android:gravity="center"
+    android:text="@string/start_game"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/exercise_counter"
+    />
+</RelativeLayout>

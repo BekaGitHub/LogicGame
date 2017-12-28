@@ -10,6 +10,7 @@ import com.example.my.swipe.activities.level_5.InfoActivity_Level_5;
 import com.example.my.swipe.activities.level_6.InfoActivity_Level_6;
 import com.example.my.swipe.activities.level_7.InfoActivity_Level_7;
 import com.example.my.swipe.activities.level_8.InfoActivity_Level_8;
+import com.example.my.swipe.activities.level_9.InfoActivity_Level_9;
 
 /**
  * Created by EmpaT on 02.11.2017.
@@ -45,12 +46,12 @@ public class Preferences {
   public static final int[] LEVEL_NAMES = {R.string.level_1_titel,
       R.string.level_2_titel, R.string.level_3_titel,
       R.string.level_4_titel, R.string.level_5_titel, R.string.level_5_titel,
-      R.string.level_7_titel, R.string.level_8_titel};
+      R.string.level_7_titel, R.string.level_8_titel, R.string.level_9_titel};
   public static final int[] LEVEL_ICONS = {R.drawable.level_1_icon,
       R.drawable.level_2_icon, R.drawable.level_3_icon,
       R.drawable.level_4_icon, R.drawable.level_5_icon,
       R.drawable.level_6_icon, R.drawable.level_7_icon,
-      R.drawable.level_8_icon
+      R.drawable.level_8_icon, R.drawable.level_9_icon
 
   };
   public static final Class[] INFO_ACTIVITIES = {
@@ -61,7 +62,8 @@ public class Preferences {
       InfoActivity_Level_5.class,
       InfoActivity_Level_6.class,
       InfoActivity_Level_7.class,
-      InfoActivity_Level_8.class
+      InfoActivity_Level_8.class,
+      InfoActivity_Level_9.class
   };
   public static final String CLASS = "class";
   public static final String BUNDLE = "bundle";
