@@ -52,7 +52,7 @@
     />
 
   <TextView
-    android:id="@+id/start_game_level2"
+    android:id="@+id/start_game"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/activity_horizontal_margin"

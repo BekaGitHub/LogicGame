@@ -18,6 +18,9 @@ public class InfoActivity_Level_8 extends InfoBaseActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_info_level_8);
 
+    TextView starGameTextView = (TextView) findViewById(R.id.start_game);
+    blinkText(starGameTextView);
+
     levelCounterTextView = (TextView) findViewById(R.id.info_activity_level8_level_counter);
     exerciseCounterTextView = (TextView) findViewById(R.id.info_activity_level8_exercise_counter);
     exerciseExplanationTextView = (TextView) findViewById(R.id.info_activity_level8_exercise_explanation);

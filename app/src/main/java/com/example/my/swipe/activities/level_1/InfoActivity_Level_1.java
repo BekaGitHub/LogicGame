@@ -3,6 +3,8 @@ package com.example.my.swipe.activities.level_1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.my.swipe.R;
@@ -15,6 +17,9 @@ public class InfoActivity_Level_1 extends InfoBaseActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_info_level_1);
+
+    TextView starGameTextView = (TextView) findViewById(R.id.start_game);
+    blinkText(starGameTextView);
 
     levelCounterTextView = (TextView) findViewById(R.id.info_activity_level1_level_counter);
     exerciseCounterTextView = (TextView) findViewById(R.id.info_activity_level1_exercise_counter);

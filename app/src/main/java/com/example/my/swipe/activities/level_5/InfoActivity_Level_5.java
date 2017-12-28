@@ -15,6 +15,9 @@ public class InfoActivity_Level_5 extends InfoBaseActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_info_level_5);
 
+    TextView starGameTextView = (TextView) findViewById(R.id.start_game);
+    blinkText(starGameTextView);
+
     levelCounterTextView = (TextView) findViewById(R.id.info_activity_level5_level_counter);
 
     Bundle bundle = getIntent().getBundleExtra(Preferences.BUNDLE);

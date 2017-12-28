@@ -1,6 +1,9 @@
 package com.example.my.swipe.activities;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.my.swipe.R;
@@ -36,5 +39,15 @@ public class InfoBaseActivity extends AppCompatActivity {
     } else {
       infoText = getString(R.string.level_counter, "" + levelIndex);
     }
+  }
+
+  public void blinkText(TextView textView)
+  {
+    Animation anim = new AlphaAnimation(0.0f, 1.0f);
+    anim.setDuration(400); //You can manage the time of the blink with this parameter
+    anim.setStartOffset(20);
+    anim.setRepeatMode(Animation.REVERSE);
+    anim.setRepeatCount(Animation.INFINITE);
+    textView.startAnimation(anim);
   }
 }
