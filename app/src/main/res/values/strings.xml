@@ -15,7 +15,7 @@
   <string name="level_7_titel">კრიპტოგრამა</string>
   <string name="level_8_titel">ლოგიკური ჩამკეტები</string>
   <string name="level_9_titel">დაალაგე რიცხვები</string>
-  <string name="find_symbol">იპოვე სიმბოლო: %1$s</string>
+  <string name="find_symbol">იპოვე სიმბოლო</string>
   <string name="linke_vs_rechte">ტვინის მარცხენა ნახევარსფერო კითხულობს ტექსტს, ხოლო
     მარჯვენა ნახევარსფერო აღიქვამს ფერებს. <b>დააკვირდი ტექსტის ფერს</b>. პასუხი
     სწორია მხოლოდ მაშინ, როდესაც ტექსტის ფერი და ფერის სახელი ერთმანეთს ემთხვევა</string>

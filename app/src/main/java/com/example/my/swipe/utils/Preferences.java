@@ -22,6 +22,7 @@ public class Preferences {
   public static final String EXERCISE_DONE = "levelDone";
   public static final String EXERCISE = "exerciseExplanationTextView";
   public static final String SYMBOL = "symbol";
+  public static final String SYMBOL_IMAGE = "symbolImage";
   public static final String SMILE = "smile";
   public static final String FROM = "from";
   public static final String LEVEL = "level";
@@ -43,6 +44,8 @@ public class Preferences {
   public static final String TIME_PASSED_FROM_LAST_EXERCISE =
       "timePassedFromLastExercise";
   public static final String[] SYMBOLS = {"+", ":)", "<", "u"};
+  public static final int[] SYMBOL_IMAGES = {R.drawable.symbol_plus, R.drawable.symbol_smile,
+      R.drawable.symbol_less, R.drawable.symbol_u};
   public static final int[] LEVEL_NAMES = {R.string.level_1_titel,
       R.string.level_2_titel, R.string.level_3_titel,
       R.string.level_4_titel, R.string.level_5_titel, R.string.level_5_titel,

@@ -133,7 +133,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     Bundle bundle = new Bundle();
     if (clickedButton.getText().equals(Preferences.SYMBOLS[symbolIndex]))
     {
-      if (symbolIndex != Preferences.SYMBOLS.length - 1) //Wenn symbolIndex, kein index vom letzten Symbol ist
+      if (symbolIndex != Preferences.SYMBOL_IMAGES.length - 1) //Wenn symbolIndex, kein index vom letzten Symbol ist
       {
         startInfoActivity(symbolIndex, bundle);
       }else
@@ -144,7 +144,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     {
       bundle.putInt(Preferences.LEVEL, 1);
       bundle.putInt(Preferences.EXERCISE, 1);
-      bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[0]);
+      bundle.putInt(Preferences.SYMBOL_IMAGE, Preferences.SYMBOL_IMAGES[0]);
       bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
       failed(clickedButton, bundle);
     }
@@ -156,7 +156,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     Intent intent = new Intent(this, InfoActivity_Level_1.class);
     bundle.putBoolean(Preferences.EXERCISE_DONE, true);
     bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
-    bundle.putString(Preferences.SYMBOL, Preferences.SYMBOLS[symbolIndex + 1]);
+    bundle.putInt(Preferences.SYMBOL_IMAGE, Preferences.SYMBOL_IMAGES[symbolIndex + 1]);
     stopExerciseTimer();
 
     if (getIntent().getBundleExtra(Preferences.BUNDLE_FROM_INFO_ACTIVITY) != null)

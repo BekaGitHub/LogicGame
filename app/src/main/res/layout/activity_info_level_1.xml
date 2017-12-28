@@ -51,6 +51,14 @@
     android:textSize="@dimen/level_counter"
     />
 
+  <ImageView
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:id="@+id/info_activity_level1_symbol_image"
+      android:layout_below="@+id/info_activity_level1_exercise_explanation"
+      android:layout_centerHorizontal="true"
+      android:src="@drawable/symbol_plus"/>
+
   <TextView
     android:id="@+id/start_game"
     android:layout_width="match_parent"
