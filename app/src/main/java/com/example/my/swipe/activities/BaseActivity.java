@@ -5,12 +5,16 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 import com.example.my.swipe.R;
 import com.example.my.swipe.fragments.BackDialog;
+import com.example.my.swipe.style.SquareButton;
 import com.example.my.swipe.utils.ExerciseTimer;
 import com.example.my.swipe.utils.Preferences;
 import com.example.my.swipe.utils.Util;
@@ -86,6 +90,29 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     editor.putInt(key, value);
 
+  }
+
+  public Button createButton(String text, int buttonWidth, int buttonHeight,
+                             int textSize, int textColor, int backgroundResource) {
+
+    DisplayMetrics dm = getResources().getDisplayMetrics();
+    float width_dpInPx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, buttonWidth, dm);
+    float height_dpInPx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, buttonHeight, dm);
+
+    SquareButton button = new SquareButton(this, (int) height_dpInPx, (int) width_dpInPx);
+    button.setAllCaps(false);
+    button.setText(text);
+    button.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+    button.setTextColor(textColor);
+    if (backgroundResource == -1)
+      button.setBackgroundResource(R.drawable.buttonshape);
+    else
+      button.setBackgroundResource(backgroundResource);
+    TableRow.LayoutParams layoutParams = new TableRow.LayoutParams();
+    layoutParams.setMargins(7, 7, 7, 7);
+    button.setLayoutParams(layoutParams);
+
+    return button;
   }
 
   public abstract Class getLevelInfoClass();

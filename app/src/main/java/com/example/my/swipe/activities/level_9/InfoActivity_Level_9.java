@@ -3,12 +3,10 @@ package com.example.my.swipe.activities.level_9;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.InfoBaseActivity;
-import com.example.my.swipe.activities.level_4.Level_4a_Activity;
 import com.example.my.swipe.activities.level_4.Level_4b_Activity;
 import com.example.my.swipe.activities.level_4.Level_4c_Activity;
 import com.example.my.swipe.activities.level_4.Level_4d_Activity;
@@ -33,7 +31,8 @@ public class InfoActivity_Level_9 extends InfoBaseActivity {
     timePassedFromLastExercise = bundle.getInt(Preferences.TIME_PASSED, 0);
 
     levelIndex = bundle.getInt(Preferences.LEVEL, 4);
-    exerciseIndex = bundle.getInt(Preferences.EXERCISE, 1);
+    exerciseIndex = bundle.getInt(Preferences.EXERCISE_INDEX, 1);
+    exerciseExplanation = getString(bundle.getInt(Preferences.AUFGABE_BESCHREIBUNG, R.string.exercise_level_9a));
     isLevelDone = bundle.getBoolean(Preferences.EXERCISE_DONE, false);
 
     setInfoText();
@@ -42,6 +41,7 @@ public class InfoActivity_Level_9 extends InfoBaseActivity {
 
     levelCounterTextView.setText(infoText);
     exerciseCounterTextView.setText(exerciseCounterText);
+    exerciseExplanationTextView.setText(exerciseExplanation);
   }
 
   public void handleClick(View view) {
@@ -49,16 +49,16 @@ public class InfoActivity_Level_9 extends InfoBaseActivity {
     Bundle bundle = new Bundle();
     switch (exerciseIndex) {
       case 1:
-        intent = new Intent(this, Level_4a_Activity.class);
+        intent = new Intent(this, Level_9a_Activity.class);
         break;
       case 2:
-        intent = new Intent(this, Level_4b_Activity.class);
+        intent = new Intent(this, Level_9b_Activity.class);
         break;
       case 3:
-        intent = new Intent(this, Level_4c_Activity.class);
+        intent = new Intent(this, Level_9c_Activity.class);
         break;
       case 4:
-        intent = new Intent(this, Level_4d_Activity.class);
+        intent = new Intent(this, Level_9d_Activity.class);
         break;
     }
     bundle.putInt(Preferences.TIME_PASSED_FROM_LAST_EXERCISE,

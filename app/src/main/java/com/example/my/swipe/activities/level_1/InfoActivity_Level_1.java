@@ -3,8 +3,6 @@ package com.example.my.swipe.activities.level_1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.my.swipe.R;
@@ -31,7 +29,7 @@ public class InfoActivity_Level_1 extends InfoBaseActivity {
     timePassedFromLastExercise = bundle.getInt(Preferences.TIME_PASSED, 0);
 
     levelIndex = bundle.getInt(Preferences.LEVEL, 1);
-    exerciseIndex = bundle.getInt(Preferences.EXERCISE, 1);
+    exerciseIndex = bundle.getInt(Preferences.EXERCISE_INDEX, 1);
     int image = bundle.getInt(Preferences.SYMBOL_IMAGE, R.drawable.symbol_plus);
     isLevelDone = bundle.getBoolean(Preferences.EXERCISE_DONE, false);
     setInfoText();

@@ -98,7 +98,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
       Intent intent = new Intent(context, Preferences.INFO_ACTIVITIES[itemPosition]);
       Bundle defaultBundle = new Bundle();
       defaultBundle.putInt(Preferences.LEVEL, 1 + itemPosition);
-      defaultBundle.putInt(Preferences.EXERCISE, Preferences.EXERCISE_COUNTER);
+      defaultBundle.putInt(Preferences.EXERCISE_INDEX, Preferences.EXERCISE_COUNTER);
       intent.putExtra(Preferences.BUNDLE, defaultBundle);
       context.startActivity(intent);
     }

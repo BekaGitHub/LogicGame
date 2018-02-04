@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.example.my.swipe.R;
 import com.example.my.swipe.activities.BaseActivity;
 import com.example.my.swipe.activities.LevelDoneActivity;
-import com.example.my.swipe.activities.level_7.InfoActivity_Level_7;
 import com.example.my.swipe.activities.level_9.InfoActivity_Level_9;
 import com.example.my.swipe.utils.Evaluator;
 import com.example.my.swipe.utils.Preferences;
@@ -47,7 +45,7 @@ public abstract class Level_8_BaseActivity extends BaseActivity
     } else
     {
       bundle.putInt(Preferences.LEVEL, 8);
-      bundle.putInt(Preferences.EXERCISE, 1);
+      bundle.putInt(Preferences.EXERCISE_INDEX, 1);
       bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_1_beschreibung));
       bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
 
@@ -61,7 +59,7 @@ public abstract class Level_8_BaseActivity extends BaseActivity
     int timePassedFromLastExercise = 0;
     Intent intent = new Intent(this, InfoActivity_Level_8.class);
     bundle.putBoolean(Preferences.EXERCISE_DONE, true);
-    bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
+    bundle.putInt(Preferences.EXERCISE_INDEX, ++Preferences.EXERCISE_COUNTER);
     bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(aufgabeBeschreibungFuerNexteAufgabe));
     bundle.putInt(Preferences.IMAGE, iconFuerNexteAufgabe);
 
@@ -132,7 +130,7 @@ public abstract class Level_8_BaseActivity extends BaseActivity
     } else
     {
       bundle.putInt(Preferences.LEVEL, 8);
-      bundle.putInt(Preferences.EXERCISE, 1);
+      bundle.putInt(Preferences.EXERCISE_INDEX, 1);
       bundle.putString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_1_beschreibung));
       bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
 

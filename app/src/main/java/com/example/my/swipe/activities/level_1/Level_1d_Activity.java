@@ -1,6 +1,7 @@
 package com.example.my.swipe.activities.level_1;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +32,7 @@ public class Level_1d_Activity extends Level_1_BaseActivity implements View.OnCl
     timerTextView = (TextView) findViewById(R.id.timer_text_view_1d);
     failedImageView = (ImageView) findViewById(R.id.failed_image_1d);
 
-    createTable(84, 7, false);
+    createTable(84, 7, 50, 50, 30, Color.WHITE, R.drawable.buttonshape, false);
     startExerciseTimer(Preferences.LEVEL_1_EXERCISE_TIME_IN_SECONDS * 1000);
   }
 

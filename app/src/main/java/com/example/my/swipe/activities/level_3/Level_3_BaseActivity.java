@@ -44,7 +44,7 @@ public abstract class Level_3_BaseActivity extends BaseActivity
     } else
     {
       bundle.putInt(Preferences.LEVEL, 3);
-      bundle.putInt(Preferences.EXERCISE, 1);
+      bundle.putInt(Preferences.EXERCISE_INDEX, 1);
       bundle.putInt(Preferences.FIGURE_1, R.string.first);
       bundle.putInt(Preferences.FIGURE_2, R.string.second);
       bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
@@ -58,7 +58,7 @@ public abstract class Level_3_BaseActivity extends BaseActivity
     int timePassedFromLastExercise = 0;
     Intent intent = new Intent(this, InfoActivity_Level_3.class);
     bundle.putBoolean(Preferences.EXERCISE_DONE, true);
-    bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
+    bundle.putInt(Preferences.EXERCISE_INDEX, ++Preferences.EXERCISE_COUNTER);
     bundle.putInt(Preferences.FIGURE_1, figureA);
     bundle.putInt(Preferences.FIGURE_2, figureB);
     stopExerciseTimer();

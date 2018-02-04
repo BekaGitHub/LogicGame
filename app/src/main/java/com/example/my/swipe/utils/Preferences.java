@@ -20,7 +20,7 @@ public class Preferences {
 
   public static final String POSITION = "position";
   public static final String EXERCISE_DONE = "levelDone";
-  public static final String EXERCISE = "exerciseExplanationTextView";
+  public static final String EXERCISE_INDEX = "exerciseIndex";
   public static final String SYMBOL = "symbol";
   public static final String SYMBOL_IMAGE = "symbolImage";
   public static final String SMILE = "smile";
@@ -50,6 +50,8 @@ public class Preferences {
       R.string.level_2_titel, R.string.level_3_titel,
       R.string.level_4_titel, R.string.level_5_titel, R.string.level_5_titel,
       R.string.level_7_titel, R.string.level_8_titel, R.string.level_9_titel};
+  public static final int[] LEVEL_9_AUFGABE_TEXTS = {R.string.exercise_level_9a, R.string.exercise_level_9b,
+          R.string.exercise_level_9c, R.string.exercise_level_9d};
   public static final int[] LEVEL_ICONS = {R.drawable.level_1_icon,
       R.drawable.level_2_icon, R.drawable.level_3_icon,
       R.drawable.level_4_icon, R.drawable.level_5_icon,
@@ -120,6 +122,10 @@ public class Preferences {
                   LEVEL_8b_EXERCISE_TIME_IN_SECONDS +
                   LEVEL_8c_EXERCISE_TIME_IN_SECONDS +
                   LEVEL_8d_EXERCISE_TIME_IN_SECONDS;
+  public static final int LEVEL_9a_EXERCISE_TIME_IN_SECONDS = 200;
+  public static final int LEVEL_9b_EXERCISE_TIME_IN_SECONDS = 200;
+  public static final int LEVEL_9c_EXERCISE_TIME_IN_SECONDS = 300;
+  public static final int LEVEL_9d_EXERCISE_TIME_IN_SECONDS = 300;
 
 
   public static int TOTAL_BRAINS = 10;

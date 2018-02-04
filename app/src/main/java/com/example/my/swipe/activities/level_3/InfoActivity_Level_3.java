@@ -27,7 +27,7 @@ public class InfoActivity_Level_3 extends InfoBaseActivity {
     timePassedFromLastExercise = bundle.getInt(Preferences.TIME_PASSED, 0);
 
     levelIndex = bundle.getInt(Preferences.LEVEL, 3);
-    exerciseIndex = bundle.getInt(Preferences.EXERCISE, 1);
+    exerciseIndex = bundle.getInt(Preferences.EXERCISE_INDEX, 1);
     isLevelDone = bundle.getBoolean(Preferences.EXERCISE_DONE, false);
 
     //aq gavcherdi 19.11.2017

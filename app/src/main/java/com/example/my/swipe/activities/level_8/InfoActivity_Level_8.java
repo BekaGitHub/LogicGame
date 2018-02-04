@@ -31,7 +31,7 @@ public class InfoActivity_Level_8 extends InfoBaseActivity {
     timePassedFromLastExercise = bundle.getInt(Preferences.TIME_PASSED, 0);
 
     levelIndex = bundle.getInt(Preferences.LEVEL, 1);
-    exerciseIndex = bundle.getInt(Preferences.EXERCISE, 1);
+    exerciseIndex = bundle.getInt(Preferences.EXERCISE_INDEX, 1);
     String aufgabeBeschreibung = bundle.getString(Preferences.AUFGABE_BESCHREIBUNG, getString(R.string.logische_schaltungen_aufgabe_1_beschreibung));
     int image = bundle.getInt(Preferences.IMAGE, R.drawable.inverter);
     isLevelDone = bundle.getBoolean(Preferences.EXERCISE_DONE, false);

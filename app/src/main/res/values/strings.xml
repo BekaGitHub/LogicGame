@@ -59,7 +59,10 @@
   <string name="exercise_level_2c">%1$s ცხოვრობს %2$s ქვემოთ.
         %3$s ცხოვრობს %4$s ქვემოთ.
         %5$s ცხოვრობს %6$s ზემოთ. ვინ ცხოვრობს %7$s სართულზე</string>
-  <string name="exercise_level_9a">დაალაგე რიცხვები ერთიდან ოცამდე ზრდადობის მიხედვით</string>
+  <string name="exercise_level_9a">დაალაგე რიცხვები ზრდადობის მიხედვით - ერთიდან ოცდაათამდე</string>
+  <string name="exercise_level_9b">დაალაგე რიცხვები კლებადობის მიხედვით - ოცდაათიდან ერთამდე</string>
+  <string name="exercise_level_9c">დაალაგე კენტი რიცხვები ზრდადობის მიხედვით - ერთიდან ორმოცდაცხრამეტამდე</string>
+  <string name="exercise_level_9d">დაალაგე ლუწი რიცხვები ზრდადობის მიხედვით - ორიდან სამოცამდე</string>
 
   <string name="color">ფერი</string>
   <string name="form">ფორმა</string>

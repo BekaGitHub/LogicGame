@@ -41,24 +41,6 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     buttons = new ArrayList<>();
   }
 
-  protected Button createButton(String text) {
-
-    DisplayMetrics dm = getResources().getDisplayMetrics();
-    float dpInPx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, dm);
-
-    SquareButton button = new SquareButton(this, (int) dpInPx, (int) dpInPx);
-    button.setAllCaps(false);
-    button.setText(text);
-    button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
-    button.setTextColor(ContextCompat.getColor(this, R.color.button_text_color));
-    button.setBackgroundResource(R.drawable.buttonshape);
-    TableRow.LayoutParams layoutParams = new TableRow.LayoutParams();
-    layoutParams.setMargins(7, 7, 7, 7);
-    button.setLayoutParams(layoutParams);
-
-    return button;
-  }
-
   protected Button createRotateButtonWithImage(String targetImage) {
 
     DisplayMetrics dm = getResources().getDisplayMetrics();
@@ -95,7 +77,9 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     super.failed(clickedButton, bundle);
   }
 
-  protected void createTable(int buttonNumber, int columnNumer, boolean isCircle) {
+  protected void createTable(int buttonNumber, int columnNumer,
+                             int buttonWidth, int buttonHeight,
+                             int textSize, int textColor, int backgroundResource, boolean isCircle) {
     Random random = new Random();
     int randomNumber = random.nextInt(buttonNumber);
     int i = 0;
@@ -110,7 +94,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         if (isCircle) {
           btn = createRotateButtonWithImage(targetSymbol);
         } else {
-          btn = createButton(targetSymbol);
+          btn = createButton(targetSymbol, buttonWidth, buttonHeight, textSize, textColor, backgroundResource);
           btn.setTextColor(Color.GREEN);
         }
         targetPosition = randomNumber;
@@ -118,7 +102,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
         if (isCircle) {
           btn = createRotateButtonWithImage(otherSymbol);
         } else {
-          btn = createButton(otherSymbol);
+          btn = createButton(otherSymbol, buttonWidth, buttonHeight, textSize, textColor, backgroundResource);
         }
       }
       buttons.add(btn);
@@ -143,7 +127,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     } else
     {
       bundle.putInt(Preferences.LEVEL, 1);
-      bundle.putInt(Preferences.EXERCISE, 1);
+      bundle.putInt(Preferences.EXERCISE_INDEX, 1);
       bundle.putInt(Preferences.SYMBOL_IMAGE, Preferences.SYMBOL_IMAGES[0]);
       bundle.putSerializable(Preferences.CLASS, getLevelInfoClass());
       failed(clickedButton, bundle);
@@ -155,7 +139,7 @@ public abstract class Level_1_BaseActivity extends BaseActivity
     int timePassedFromLastExercise = 0;
     Intent intent = new Intent(this, InfoActivity_Level_1.class);
     bundle.putBoolean(Preferences.EXERCISE_DONE, true);
-    bundle.putInt(Preferences.EXERCISE, ++Preferences.EXERCISE_COUNTER);
+    bundle.putInt(Preferences.EXERCISE_INDEX, ++Preferences.EXERCISE_COUNTER);
     bundle.putInt(Preferences.SYMBOL_IMAGE, Preferences.SYMBOL_IMAGES[symbolIndex + 1]);
     stopExerciseTimer();
 
